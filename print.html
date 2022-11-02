@@ -1,0 +1,1145 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ZYR&#x27;s note</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">mdbook筆記</li><li class="chapter-item expanded "><a href="mdbook/note.html"><strong aria-hidden="true">1.</strong> mdbook 筆記</a></li><li class="chapter-item expanded "><a href="Arch_Linux/Arch_Linux.html"><strong aria-hidden="true">2.</strong> Arch_Linux 安裝筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Arch_Linux/pi.html"><strong aria-hidden="true">2.1.</strong> Raspberry pi 3筆記</a></li></ol></li><li class="chapter-item expanded "><a href="CandCpulse/C.html"><strong aria-hidden="true">3.</strong> C</a></li><li class="chapter-item expanded "><a href="CandCpulse/Cpulse.html"><strong aria-hidden="true">4.</strong> C ++</a></li><li class="chapter-item expanded "><a href="C#/C_sharp.html"><strong aria-hidden="true">5.</strong> C #</a></li><li class="chapter-item expanded "><a href="Git/Git.html"><strong aria-hidden="true">6.</strong> Git</a></li><li class="chapter-item expanded "><a href="GPG/gpg.html"><strong aria-hidden="true">7.</strong> GPG</a></li><li class="chapter-item expanded "><a href="JavaScript/React.html"><strong aria-hidden="true">8.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="Yubikey/Createkey.html"><strong aria-hidden="true">9.</strong> Yubikey</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Yubikey/git.html"><strong aria-hidden="true">9.1.</strong> Yubikey 使用gpg簽章驗證/上傳驗證</a></li></ol></li><li class="chapter-item expanded "><a href="Kubernetes/Docker.html"><strong aria-hidden="true">10.</strong> Docker筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Kubernetes/Kubernetes.html"><strong aria-hidden="true">10.1.</strong> Kubernetes筆記</a></li></ol></li><li class="chapter-item expanded "><a href="Python/Python.html"><strong aria-hidden="true">11.</strong> Python筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Python/tensorflow.html"><strong aria-hidden="true">11.1.</strong> tensorflow筆記</a></li></ol></li><li class="chapter-item expanded "><a href="Liences_learning/list.html"><strong aria-hidden="true">12.</strong> Liences筆記</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ZYR&#x27;s note</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="cargo-install-mdbook"><a class="header" href="#cargo-install-mdbook">cargo install mdbook</a></h1>
+<h1 id="mdbook-init-建立新書"><a class="header" href="#mdbook-init-建立新書">mdbook init 建立新書</a></h1>
+<h1 id="mdbook-build-編譯轉換"><a class="header" href="#mdbook-build-編譯轉換">mdbook build 編譯轉換</a></h1>
+<h1 id="mdbook-serve-測試運行"><a class="header" href="#mdbook-serve-測試運行">mdbook serve 測試運行</a></h1>
+<h2 id="編譯後出現的book-folder-內為完整的網頁note檔案"><a class="header" href="#編譯後出現的book-folder-內為完整的網頁note檔案">編譯後出現的book folder 內為完整的網頁note檔案</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="安裝arch-linux"><a class="header" href="#安裝arch-linux">安裝Arch Linux</a></h1>
+<p><a href="http://note.kurodigi.com/archlinux-uefi-install/">UEFI+GPT的Arch Linux安裝步驟(似乎有少寫請參考下面的連結)</a><br />
+<a href="http://www.wlintmp.net/2014/02/arch-linux.html">P.S.請參考這個網頁的mkinitcpio</a></p>
+<p>硬碟分割並建立分割區</p>
+<h2 id="gdisk"><a class="header" href="#gdisk">gdisk</a></h2>
+<pre><code>gdisk /dev/sda 進入分割系統環節
+
+&gt; o  
+建立硬碟 GPT 分割表
+&gt; n
+建立一個新磁區
+&gt; w
+寫入系統並離開分割環節
+</code></pre>
+<p>在這裡最少須建立下列分割磁區 未提及項目則使用預設</p>
+<ul>
+<li>Boot (開機磁區) (sda1)
+<ul>
+<li>Last sector: +512MB</li>
+<li>GUID : EF00  (標記成 EFI) </li>
+</ul>
+</li>
+<li>swap (記憶體交換區) (sda2)
+<ul>
+<li>Last sector : +1G</li>
+<li>GUID : 8200 (標記成 Linux swap)</li>
+</ul>
+</li>
+<li>root / (根目錄) (sda3)
+<ul>
+<li>Last sector: 皆可</li>
+<li>GUID : 8300 (標記成 Linux 硬體空間)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>mkfs.vfat -F32 /dev/sda1</p>
+<p>將 Boot 磁區格式化成 FAT32</p>
+<p>mkfs.ext4 /dev/sda3</p>
+<p>將 root 磁區格式化成 ext4</p>
+<p>mkswap /dev/sda2
+swapon /dev/sda2</p>
+<p>將 swap 磁區標記成 swap</p>
+<hr />
+<p>掛載硬碟</p>
+<p>mount /dev/sda3 /mnt</p>
+<p>mkdir /mnt/boot 建立 boot 資料夾</p>
+<p>mount /dev/sda1 /mnt/boot</p>
+<hr />
+<blockquote>
+<p>/etc/pacman.d/mirrorlist 是 pacman 套件管理的下載來源 </p>
+</blockquote>
+<p>開始安裝主系統</p>
+<p>pacstrap -i /mnt base base-devel linux</p>
+<hr />
+<h2 id="建立-fstab-開機自動掛載項目"><a class="header" href="#建立-fstab-開機自動掛載項目">建立 fstab (開機自動掛載項目)</a></h2>
+<p>genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</p>
+<hr />
+<p>arch-chroot /mnt /bin/bash</p>
+<p>移動至安裝完的系統中</p>
+<hr />
+<h2 id="修改語系"><a class="header" href="#修改語系">修改語系</a></h2>
+<p>修改 /etc/locale.gen</p>
+<p>把會使用到的語系取消註解後儲存</p>
+<p>執行 locale-gen</p>
+<p>echo LANG=en_US.UTF-8 &gt; /etc/locale.conf
+export LANG=en_US.UTF-8</p>
+<hr />
+<h2 id="修改時區"><a class="header" href="#修改時區">修改時區</a></h2>
+<p>ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime</p>
+<p>hwclock -u -w</p>
+<hr />
+<h2 id="修改-hostname"><a class="header" href="#修改-hostname">修改 hostname</a></h2>
+<p>echo 名稱 &gt; /etc/hostname</p>
+<hr />
+<h2 id="修改-root--密碼"><a class="header" href="#修改-root--密碼">修改 root  密碼</a></h2>
+<p>passwd</p>
+<hr />
+<h2 id="建立開機映像檔"><a class="header" href="#建立開機映像檔">建立開機映像檔</a></h2>
+<p>mkinitcpio -p linux</p>
+<hr />
+<h2 id="載入模組"><a class="header" href="#載入模組">載入模組</a></h2>
+<p>modprobe dm-mod </p>
+<hr />
+<h2 id="安裝-grub-開機管理清單"><a class="header" href="#安裝-grub-開機管理清單">安裝 grub 開機管理清單</a></h2>
+<pre><code>pacman -S grub dosfstools efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck --debug
+grub-mkconfig -o /boot/grub/grub.cfg
+
+mkdir /boot/EFI/boot
+cp /boot/EFI/arch_grub/grubx64.efi  /boot/EFI/boot/bootx64.efi
+</code></pre>
+<hr />
+<h1 id="安裝arch-linux後"><a class="header" href="#安裝arch-linux後">安裝Arch Linux後</a></h1>
+<h3 id="接下來安裝桌面環境也可以不裝再裝之前請先務必確認你已經有建立新的使用者並有用visudo-來完成為這位新使用者給予root權限"><a class="header" href="#接下來安裝桌面環境也可以不裝再裝之前請先務必確認你已經有建立新的使用者並有用visudo-來完成為這位新使用者給予root權限">接下來安裝桌面環境，也可以不裝，再裝之前請先務必確認你已經有建立新的使用者，並有用visudo 來完成為這位新使用者給予root權限</a></h3>
+<h4 id="以下為pacman--s-軟體名稱"><a class="header" href="#以下為pacman--s-軟體名稱">以下為pacman -S 軟體名稱</a></h4>
+<h2 id="圖形介面"><a class="header" href="#圖形介面">圖形介面</a></h2>
+<p>pacman -S xorg-server xorg-server-utils(xorg-apps) xorg-xinit</p>
+<h2 id="顯示驅動程式擇一"><a class="header" href="#顯示驅動程式擇一">顯示驅動程式(擇一)</a></h2>
+<ul>
+<li>AMD- xf86-video-amdgpu</li>
+<li>Intel- xf86-video-intel</li>
+<li>Nvidia- xf86-video-nouveau</li>
+<li>VMware- 
+<ul>
+<li>open-vm-tools </li>
+<li>xf86-video-vmware </li>
+<li>xf86-input-vmmouse</li>
+<li>(VMware 底下的元件都要安裝) 並啟用 vmtoolsd.service</li>
+</ul>
+</li>
+</ul>
+<h2 id="登入圖形管理擇一"><a class="header" href="#登入圖形管理擇一">登入圖形管理(擇一)</a></h2>
+<ul>
+<li>KDE Plasma 5 - sddm</li>
+<li>KDE4 -kdm</li>
+<li>GNOME - gdm</li>
+<li>LXDE -lxdm</li>
+<li>Universal Display Managers - lightdm</li>
+<li>mdm-display-manager</li>
+<li>slim</li>
+<li>xorg-xdm</li>
+</ul>
+<h2 id="桌面管理擇一"><a class="header" href="#桌面管理擇一">桌面管理(擇一)</a></h2>
+<ul>
+<li>KDE Plasma 5 - plasma  plasma-wayland-session</li>
+<li>Cinnamon- cinnamon</li>
+<li>gnome - gnome</li>
+<li>LXDE -lxde</li>
+<li>MATE -mate</li>
+<li>XFCE -xfce4</li>
+<li>i3(i3-wm)-i3</li>
+<li>i3-gaps</li>
+</ul>
+<h2 id="桌面管理應用程式擇一"><a class="header" href="#桌面管理應用程式擇一">桌面管理應用程式(擇一)</a></h2>
+<ul>
+<li>KDE Plasma 5 -kde-applications</li>
+<li>Cinnamon- N/A</li>
+<li>gnome - gnome-extra</li>
+<li>LXDE -N/A</li>
+<li>MATE -mate-extra</li>
+<li>XFCE -xfce4-goodies</li>
+<li>i3
+<ul>
+<li>thunar</li>
+<li>xwallpaper</li>
+<li>picom
+<ul>
+<li>附註 設置 opacity-rule 可以調整透明度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="圖形化terminel終端機擇一或自己找"><a class="header" href="#圖形化terminel終端機擇一或自己找">圖形化terminel終端機(擇一或自己找)</a></h2>
+<ul>
+<li>gnome-terminal</li>
+<li>rxvt-terminal</li>
+<li>i3 
+<ul>
+<li>alacritty</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1 id="相關功能設定"><a class="header" href="#相關功能設定">相關功能設定</a></h1>
+<h2 id="網路管理器可裝也可不裝"><a class="header" href="#網路管理器可裝也可不裝">網路管理器(可裝也可不裝)</a></h2>
+<p>pacman -S networkmanager</p>
+<p>安裝網路管理服務的UI</p>
+<p>pacman -S network-manager-applet</p>
+<hr />
+<h2 id="無線網路"><a class="header" href="#無線網路">無線網路</a></h2>
+<p>安裝無線工具</p>
+<p>pacman -S wireless_tools</p>
+<p>systemctl disable dhcpcd.service</p>
+<p>systemctl enable NetworkManager.service</p>
+<hr />
+<h2 id="wifi-設定及使用etcwpa_supplicant"><a class="header" href="#wifi-設定及使用etcwpa_supplicant">wifi 設定及使用(etc/wpa_supplicant)</a></h2>
+<p>在wpa_supplicant </p>
+<p>建立home_wifi (可以隨意自己取名)</p>
+<blockquote>
+<p>sudo nano /etc/wpa_supplicant/home_wifi</p>
+</blockquote>
+<pre><code>network={
+ssid=”neworkname”
+psk=”password”
+}
+</code></pre>
+<p>設定無線網卡</p>
+<blockquote>
+<p>wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/home_wifi &amp;</p>
+</blockquote>
+<p>啟動無線網卡</p>
+<blockquote>
+<p>dhcpcd wlan0</p>
+</blockquote>
+<h2 id="佈景主題可裝也可不裝"><a class="header" href="#佈景主題可裝也可不裝">佈景主題(可裝也可不裝)</a></h2>
+<ul>
+<li>Minty</li>
+<li>New-Minty</li>
+<li>Adwaita-dark</li>
+<li>elementary</li>
+</ul>
+<hr />
+<h2 id="建議安裝程式可裝也可不裝"><a class="header" href="#建議安裝程式可裝也可不裝">建議安裝程式(可裝也可不裝)</a></h2>
+<p>以下為pacman -S 軟體名稱(P.S 升級系統為 pacman -Syu)</p>
+<ul>
+<li>screenfetch</li>
+<li>wget、curl</li>
+<li>git</li>
+<li>smplayer</li>
+<li>omxplayer  (ARM)推薦</li>
+</ul>
+<hr />
+<p>下面這個建議是用 bash *.sh 來安裝，檔案請到該官網去下載</p>
+<ul>
+<li>jupyter-notebook</li>
+</ul>
+<hr />
+<h1 id="中文語言介面與輸入法"><a class="header" href="#中文語言介面與輸入法">(中文)語言介面與輸入法</a></h1>
+<p>~/.config/locale.conf 寫入</p>
+<pre><code>LANG=&quot;zh_TW.UTF-8&quot;
+</code></pre>
+<p>字形</p>
+<p>pacman -S ttf-droid</p>
+<p>fc-cache -v</p>
+<p>接著設定XIM環境變數</p>
+<p>export GTK_IM_MODULE=ibus</p>
+<p>export XMODIFIERS=@im=ibus</p>
+<p>export QT_IM_MODULE=ibus</p>
+<p>接著安裝輸入法</p>
+<p>pacman -S ibus</p>
+<p>pacman -S ibus-pinyin ibus-libpinyin </p>
+<p>ibus-setup</p>
+<p>將下列內容寫入家目錄下的.xinitrc</p>
+<pre><code>ibus-daemon -xrd
+</code></pre>
+<hr />
+<p>請在官網的AUR找出以下套件的 (PKGBUILD)</p>
+<ul>
+<li>package-query</li>
+<li>yaourt</li>
+</ul>
+<h4 id="aur-請依照下面的順序安裝-yaourt套件"><a class="header" href="#aur-請依照下面的順序安裝-yaourt套件">AUR 請依照下面的順序安裝 yaourt套件</a></h4>
+<pre><code>	git clone https://.../X.git
+	cd .../X
+	makepkg -si (要有PKGBUILD) 基本會再 git 裡 沒有的話再找找
+</code></pre>
+<pre><code>makepkg -si (要有PKGBUILD)
+可以拆解成
+</code></pre>
+<pre><code>	makepkg -s PKGBUILD
+	pacman -U *.pkg.tar.xz
+</code></pre>
+<h3 id="yaourt-完成後請輸入此格式來安裝yaourt--s-軟體名稱"><a class="header" href="#yaourt-完成後請輸入此格式來安裝yaourt--s-軟體名稱">yaourt 完成後請輸入此格式來安裝(yaourt -S 軟體名稱)</a></h3>
+<hr />
+<p>以下為AUR套件 必須要用 yaourt 請確認有裝好 yaourt -S 軟體名稱</p>
+<ul>
+<li>Visual Studio Code</li>
+</ul>
+<hr />
+<hr />
+<h1 id="環境元件組合研究"><a class="header" href="#環境元件組合研究">環境元件組合研究</a></h1>
+<ul>
+<li>compiz(adwaita)</li>
+<li>conky conky2 Conky-Colors(系統環境詳細資訊)</li>
+<li>cairo-docky { Numix[GTK2] Numix-Circle-Light } &amp;&amp; Docky(Plank)</li>
+</ul>
+<hr />
+<ul>
+<li>(i3-gaps)</li>
+<li>Ranger</li>
+<li>Polybar-Font Awesome-RobotoMono</li>
+<li>Arc-theme </li>
+<li>Rofi -Sardi-Mono</li>
+<li>Dunst</li>
+<li>betterlockscreen</li>
+<li>Pywal </li>
+</ul>
+<hr />
+<p>mate 桌布背景幻燈片設定 <a href="https://github.com/robertmodesty/make-slideshow-wallpaper/blob/master/mksldshw">原github</a></p>
+<hr />
+<hr />
+<h1 id="linux-功能說明"><a class="header" href="#linux-功能說明">Linux 功能說明</a></h1>
+<h2 id="ssh"><a class="header" href="#ssh">ssh</a></h2>
+<pre><code>在自己的家目錄下建立 ~/.ssh/authorized_keys 將公鑰放入並以行區分
+.ssh 權限 700
+authorized_key  權限 600
+
+連接登入時
+ssh -i (要使用其私鑰登入的路徑或名稱) Account@ip  
+// 選擇要登入的帳戶@找到對方的 IPv4 或 IPv6 的位置 
+
+</code></pre>
+<h2 id="ssh-tunnel"><a class="header" href="#ssh-tunnel">ssh Tunnel</a></h2>
+<pre><code>//本地機器連到遠端機器
+ssh -L (本地的Port):(遠端的(Local address)):(遠端的(Local address)的Port)  (遠端存取資源電腦的帳戶):(遠端ip位址)
+//遠端機器連回本地機器
+ssh -N -R (遠端的Port):(本地位址(localhost)):(本地位址的Port)   (遠端ip位址)
+</code></pre>
+<h2 id="使用者新增"><a class="header" href="#使用者新增">使用者新增</a></h2>
+<pre><code>useradd -m -g users -s /bin/bash {Name}
+-m 為這個使用者建立資料夾
+-g 設定群組 users
+-s 設定shell
+</code></pre>
+<h2 id="背景執行"><a class="header" href="#背景執行">背景執行</a></h2>
+<pre><code>在該 command 最後加上 &amp;
+
+查詢當下背景執行的 command
+&gt; jobs
+
+已經執行的 command 放入倍警
+Ctrl+Z 暫停
+&gt; bg %(number)
+
+把背景的工作切換到前面
+&gt; fg %(number)
+
+登出不停止工作
+&gt; nohup 
+</code></pre>
+<h2 id="靜態dnswifi"><a class="header" href="#靜態dnswifi">靜態DNS(WIFI)</a></h2>
+<pre><code>dhcpcd
+需要設定成靜態DNS的時候
+/etc/dhcpcd.conf
+---
+static domain_name_servers=8.8.8.8 8.8.4.4
+
+
+在
+/etc/resolv.conf
+可以看到取得的 DNS
+
+</code></pre>
+<h2 id="vmware-設定"><a class="header" href="#vmware-設定">VMware 設定</a></h2>
+<pre><code>vmware-hgfsclient
+在虛擬機中使用此指令可以看到 VMware 有設定分享檔案的名稱
+
+mkdir &lt;shared folders root directory&gt;
+sudo vmhgfs-fuse -o allow_other -o auto_unmount .host:/&lt;shared_folder&gt; &lt;shared folders root directory&gt;
+建立資料夾並掛載 VMware 所分享的資料夾
+</code></pre>
+<h2 id="etcskel-目錄"><a class="header" href="#etcskel-目錄">/etc/skel 目錄</a></h2>
+<pre><code>建立新使用者時 所預設的資料夾模版目錄
+</code></pre>
+<hr />
+<h2 id="rm"><a class="header" href="#rm">rm</a></h2>
+<pre><code>rm -d 刪除空目錄  
+rm -r 遞回刪除資料夾內檔案
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="個人使用桌面環境安裝"><a class="header" href="#個人使用桌面環境安裝">個人使用桌面環境安裝</a></h2>
+<ul>
+<li>pacman -Syu alsa-firmware alsaplayer alsa-lib alsa-utils alsa-plugins //Pi驅動程式</li>
+<li>i3(i3-wm) // desktop</li>
+<li>ranger //filemanager</li>
+<li>urxvt(rxvt-Unicode) //terminal 需要設定 config</li>
+<li>omxplayer</li>
+<li>streamlink</li>
+<li>NetworkManager</li>
+<li>ssh</li>
+</ul>
+<h2 id="bootconfigtxt"><a class="header" href="#bootconfigtxt">/boot/config.txt</a></h2>
+<pre><code> http://elinux.org/RPi_config.txt
+ sudo amixer cset numid=3 &lt;n&gt;
+ 0=auto, 1=analog, 2=hdmi
+</code></pre>
+<p>=============================</p>
+<pre><code>hdmi_force_hotplug=1
+hdmi_force_edid_audio=1
+arm_control=0x200 64bit
+</code></pre>
+<hr />
+<p>python install --upgrade youtube-dl</p>
+<pre><code>youtube-dl -F &lt;youtube-url&gt; 
+omxplayer `youtube-dl -g -f &lt;format_id&gt; &lt;youtube-url&gt;` 
+
+Exp:omxplayer -o local --win 0,0,1280,720 `youtube-dl -g -f best &lt;youtube-url&gt;`
+</code></pre>
+<h2 id="無線網路wifietcwpa_supplicant"><a class="header" href="#無線網路wifietcwpa_supplicant">無線網路(wifi)(etc/wpa_supplicant)</a></h2>
+<p>在wpa_supplicant
+建立home_wifi (可以隨意自己取名)</p>
+<pre><code>sudo nano /etc/wpa_supplicant/home_wifi
+</code></pre>
+<pre><code>network={
+ssid=”neworkname”
+psk=”password”
+}
+</code></pre>
+<p>設定無線網卡</p>
+<blockquote>
+<p>wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/home_wifi &amp;</p>
+</blockquote>
+<p>啟動無線網卡</p>
+<blockquote>
+<p>dhcpcd wlan0</p>
+</blockquote>
+<h2 id="wifi連接注意事項"><a class="header" href="#wifi連接注意事項">WIFI連接注意事項</a></h2>
+<p>如果router 本身具有網路連線防火牆等功能及需使用其wifi AP 的話 需注意DNS 的取得<br />
+請參照 Arch Linux static Dns的設定</p>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h2 id="throw-and-systemexception-丟出例外訊息"><a class="header" href="#throw-and-systemexception-丟出例外訊息">throw and System.exception(); 丟出例外訊息</a></h2>
+<pre><code>try{
+    if(符合條件){
+        throw new System.Exception();//丟出新的例外訊息
+    }
+}cache{ //cache 捕捉任何例外訊息
+    Console.WritLine(&quot;捕捉到符合條件的例外&quot;); //執行捕捉到例外食的程式碼
+}
+
+//也可以限定其他類型的捕捉
+
+ try {
+            object o2 = null;
+            int i2 = (int) o2; 
+            System.Console.WriteLine(o2);
+            System.Console.WriteLine(i2);
+        }
+        catch (System.NullReferenceException e) {//-------先判斷抓到沒有例外
+            System.Console.WriteLine(e.ToString().Substring(0, 29));
+        }
+        catch {
+            System.Console.WriteLine(&quot;something wrong&quot;);
+        }finally {//--------------------無論有沒有抓到例外都會執行的部分
+            System.Console.WriteLine(&quot;finally&quot;); 
+        }
+</code></pre>
+<p>==========</p>
+<h2 id="foreach"><a class="header" href="#foreach">foreach</a></h2>
+<pre><code>int [] a = new int[] { 25 , 18, 26};
+int sum =0;
+foreach(int i in a){
+    sum+=i;
+}
+
+</code></pre>
+<p>============</p>
+<h2 id="指標"><a class="header" href="#指標">指標</a></h2>
+<pre><code>unsafe{
+    int* aPtr = &amp;a;
+    *aPtr=10;
+    System.Console.WriteLine(*aPtr);
+}
+
+fixed 用於防止不安全的內容遭到記憶體重新配置，或是建立固定大小的緩衝區
+unsafe static void Main() {
+        Point pt = new Point();
+        pt.x = 5;
+        pt.y = 6;
+ 
+        fixed (int* p = &amp;pt.x) {
+            SquarePtrParam(p);
+        }
+ 
+        System.Console.WriteLine (&quot;{0} {1}&quot;, pt.x, pt.y);
+    }
+</code></pre>
+<p>============================================================</p>
+<h2 id="enum"><a class="header" href="#enum">enum</a></h2>
+<pre><code>enum 用來建立列舉型態，這是一種實值型態，簡單說就是依序遞增的整數數列或設定好的整數。
+
+enum Days {Mon=1, Tue=2, Wed=3, Thu=4, Fri=5, Sat=6, Sun=7};
+
+設定整數就是在識別字後面加上等號，自行指派整數值，例如
+
+enum Days {Mon = 1, Tue, Wed, Thu, Fri, Sat, Sun};
+// Mon = 1, Tue=2, Wed=3, Thu=4, Fri=5, Sat=6, Sun=7
+
+</code></pre>
+<p>============================================================</p>
+<h2 id="dictionary"><a class="header" href="#dictionary">Dictionary</a></h2>
+<pre><code>Key to Value 
+
+如文字對應變數 效果跟Json類似
+
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="git-reset-使用方式"><a class="header" href="#git-reset-使用方式">git reset 使用方式</a></h2>
+<p>以下列程序來表示流程圖</p>
+<h3 id="aworking---add-file----bstaging---commit----crepo"><a class="header" href="#aworking---add-file----bstaging---commit----crepo"><font color="FF0000">A(Working)</font> --[add file]--&gt;  <font color="00FF00">B(Staging)</font> --[commit]--&gt;  C(Repo)</a></h3>
+<blockquote>
+<p>git reset --soft  (SHA1 ID)</p>
+</blockquote>
+<h3 id="將-head-到-sha1-id-所有的-repo變更記錄-恢復成-staging變更記錄"><a class="header" href="#將-head-到-sha1-id-所有的-repo變更記錄-恢復成-staging變更記錄">將 HEAD 到 (SHA1 ID) 所有的 &quot;Repo變更記錄&quot; 恢復成 <font color="00FF00">&quot;Staging變更記錄&quot;</font></a></h3>
+<blockquote>
+<p>git reset --mixed (SHA1 ID)</p>
+</blockquote>
+<h3 id="預設-將-head-到-sha1-id-所有的-repo變更記錄-及-staging變更記錄-恢復成-working-變更記錄"><a class="header" href="#預設-將-head-到-sha1-id-所有的-repo變更記錄-及-staging變更記錄-恢復成-working-變更記錄">(預設) 將 HEAD 到 (SHA1 ID) 所有的 &quot;Repo變更記錄 及 <font color="00FF00">Staging變更記錄</font>&quot; 恢復成 <font color="FF0000">&quot;Working 變更記錄&quot;</font></a></h3>
+<blockquote>
+<p>git reset --hard (SHA1 ID)</p>
+</blockquote>
+<h3 id="將-head-到-sha1-id-所有的-repo變更記錄-及-staging變更記錄-及-working-變更記錄-全部消去"><a class="header" href="#將-head-到-sha1-id-所有的-repo變更記錄-及-staging變更記錄-及-working-變更記錄-全部消去">將 HEAD 到 (SHA1 ID) 所有的 &quot;Repo變更記錄 及 <font color="00FF00">Staging變更記錄</font> 及 <font color="FF0000">Working 變更記錄</font>&quot; 全部消去</a></h3>
+<hr />
+<h2 id="git-branch"><a class="header" href="#git-branch">git Branch</a></h2>
+<p>使用 branch 可以自由切換/建立新分支</p>
+<p>但當切換的目標是 (SHA1 ID) 時
+會自動產生 &quot;未命名&quot;(暫時性) 的 branch</p>
+<hr />
+<h2 id="submodule"><a class="header" href="#submodule">submodule</a></h2>
+<h3 id="新增-submodule"><a class="header" href="#新增-submodule">新增 submodule</a></h3>
+<p>git submodule add git://github.com/majutsushi/tagbar.git .vim/bundle/tagbar</p>
+<p>foreach 指令：</p>
+<p>git submodule foreach --recursive git pull origin master</p>
+<h3 id="刪除-submodule"><a class="header" href="#刪除-submodule">刪除 submodule</a></h3>
+<p>git rm --cached /path/to/files
+rm -rf /path/to/files</p>
+<p>[submodule &quot;.vim/bundle/vim-gitgutter&quot;]
+path = .vim/bundle/vim-gitgutter
+url = git://github.com/airblade/vim-gitgutter.git
+-[submodule &quot;.vim/bundle/vim-autoclose&quot;]</p>
+<ul>
+<li>path = .vim/bundle/vim-autoclose</li>
+<li>url = git://github.com/Townk/vim-autoclose.git</li>
+</ul>
+<p>git clone --recursive git@github.com:chinghanho/.dotfiles.git</p>
+<p>git submodule init
+git submodule update --recursive</p>
+<div style="break-before: page; page-break-before: always;"></div><p>GPG 常用整理</p>
+<pre><code>gpg gpg2
+   --generate-key           產生新金鑰
+   --full-generate-key      產生新金鑰(完整設定)
+
+   -s --sign 產生檔案簽名
+      --clear-sign 產生檔案明文簽名(文字)
+    
+   -e --encrypt   加密
+
+   -d --decrypt   解密
+      --verify    驗證簽名
+
+   -k --list-keys 公鑰列表
+      --fingerprint 金鑰指紋
+   -K --list-secret-key 私鑰列表
+
+      --delete-key 刪除公鑰
+      --delete-secret-key 刪除私鑰
+
+      --import 匯入金鑰
+
+      --export 匯出金鑰
+
+      --edit-key 編輯金鑰  trust 信任金鑰
+
+      --sign-key 金鑰簽名  (使用金鑰 簽名 (公)金鑰)
+
+      --card-status  硬體存放金鑰狀態
+      --edit-card    編輯硬體存放金鑰
+
+</code></pre>
+<pre><code>-a --armor              以 ASCII 碼 輸出
+-r --recipient USER-ID  以 USER-ID  加密
+-u --local-user USER-ID 以 USER-ID  簽名 或 解密
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="immutability-不可變性-相關function"><a class="header" href="#immutability-不可變性-相關function">Immutability 不可變性 相關function</a></h1>
+<pre><code>Object.assign
+array.map
+array.filter 
+array.concat
+</code></pre>
+<h1 id="mutability-可變性"><a class="header" href="#mutability-可變性">mutability 可變性</a></h1>
+<pre><code>array.push 
+array.pop 
+array.sort
+</code></pre>
+<h1 id="spread-syntax"><a class="header" href="#spread-syntax">spread syntax</a></h1>
+<pre><code>let i=[1,2,3,4,5]
+let j=[...i,6]
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><p>Yubikey</p>
+<h1 id="oath-totp"><a class="header" href="#oath-totp">OATH-TOTP</a></h1>
+<h1 id="openpgp"><a class="header" href="#openpgp">OpenPGP</a></h1>
+<ul>
+<li>default PIN 123456</li>
+<li>default Admin PIN 12345678</li>
+</ul>
+<h2 id="tools"><a class="header" href="#tools">tools</a></h2>
+<ul>
+<li>GPG2 (OpenPGP)</li>
+</ul>
+<h2 id="教學"><a class="header" href="#教學">教學</a></h2>
+<pre><code>首次須先修改Yubikey 密碼
+gpg2 --card-edit
+可以看自己的Yubikey OpenPGP資訊
+之後輸入
+&gt;admin
+&gt;passwd
+
+改密碼請修改PIN &amp; Admin PIN
+
+
+建立金鑰
+gpg2 --export --full-gen-key
+
+如果要備份
+gpg2 --export-secret-subkey --armor (KeyWord) subkey
+gpg2 --export-secret-key --armor (KeyWord) privatekey
+gpg2 --export --armor (KeyWord)  publickey
+
+建立子鑰
+gpg2 --expert --edit-key (KeyWord)
+&gt;addkey
+RSA (set your own capabilities) 2048/4096
+Current allowed actions: Sign Encrypt
+是開關式
+選擇到剩下 authenticate capability
+
+&gt;Save
+
+
+匯入
+gpg2 --edit-key (KeyWord)
+&gt;toggle
+&gt;keytocard
+回答1
+
+選擇第一個subkey
+&gt;key 1 
+&gt;keytocard
+只能回答2
+
+取消選擇第一個子鑰，選擇第2個子鑰
+&gt;key 1
+&gt;key 2
+&gt;keytocard
+
+只能回答3
+
+&gt;Save
+</code></pre>
+<h1 id="piv"><a class="header" href="#piv">PIV</a></h1>
+<ul>
+<li>default PIN 123456</li>
+<li>default PUK 12345678</li>
+<li>default management key 010203040506070801020304050607080102030405060708</li>
+</ul>
+<h2 id="slots"><a class="header" href="#slots">slots</a></h2>
+<p><a href="https://developers.yubico.com/PIV/Introduction/Certificate_slots.html">PIV certificate slots</a></p>
+<h2 id="tools-1"><a class="header" href="#tools-1">tools</a></h2>
+<ul>
+<li>yubico-piv-tool</li>
+<li>pkcs15-tool ( OpenSC )</li>
+</ul>
+<h2 id="教學-1"><a class="header" href="#教學-1">教學</a></h2>
+<pre><code>修改PIN、PUK
+還要修改 management key 建議下載軟體或參考官方做法
+yubico-piv-tool -a change-pin -P 123456
+yubico-piv-tool -a change-puk -P 12345678
+
+建立金鑰
+yubico-piv-tool -s 9a -a generate -o public.pem
+
+驗證並自我簽名
+yubico-piv-tool -a verify-pin -a selfsign-certificate -s 9a -S &quot;/CN=SSH KEY/&quot; -i public.pem -o cert.pem
+
+匯入驗證
+yubico-piv-tool -a import-certificate -s 9a -i cert.pem
+</code></pre>
+<pre><code>可看自己有的PIV
+pkcs15-tool --list-public-key
+取得ssh鑰實
+pkcs15-tool --read-ssh-key 01
+</code></pre>
+<p>Exp: ssh -I /.../opensc-pkcs11.so (Account@web.link)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="git-sign-commit-with-yubikey"><a class="header" href="#git-sign-commit-with-yubikey">git sign commit with Yubikey</a></h1>
+<p>確定這裡要有設定</p>
+<pre><code>git config user.name &quot;name&quot;
+git config user.email &quot;email&quot;
+</code></pre>
+<p>設定gpg.exe程式路徑</p>
+<pre><code>git config gpg.program &quot;gpg_link&quot;
+</code></pre>
+<p>加入要簽署的GPG金鑰
+global 為全域設定</p>
+<pre><code>git config user.signingkey &quot;gpg_key_fingerprint&quot;
+or
+git config --global user.signingkey &quot;gpg_key_fingerprint&quot;
+</code></pre>
+<p>加入 -S 後即可簽署</p>
+<pre><code>git commit -S -m &quot;message&quot;
+</code></pre>
+<p>有加入此內容即可不用加 -S</p>
+<pre><code>git config commit.gpgsign true
+or
+git config --global commit.gpgsign true
+</code></pre>
+<pre><code>git commit -m &quot;message&quot;
+</code></pre>
+<p>之後把該GPG公鑰加入到gitlab/github上即可</p>
+<p>之後便可在網頁上該欄位看到Verify</p>
+<h1 id="git-push-commits-with-yubikey"><a class="header" href="#git-push-commits-with-yubikey">git push commits with Yubikey</a></h1>
+<p><a href="https://github.com/benpye/wsl-ssh-pageant">先完成此做法</a></p>
+<p>完成其中的 How to use with WSL與 How to use with Windows 10 native OpenSSH client 設定</p>
+<p><a href="https://gist.github.com/matusnovak/302c7b003043849337f94518a71df777">再參照此作法</a></p>
+<p>便能設定完成</p>
+<div style="break-before: page; page-break-before: always;"></div><p>執行起一個容器</p>
+<pre><code>docker run -it -p 5000:6000 &quot;container-image&quot; bash
+</code></pre>
+<p>-it : 以tty介面對容器逕行訪問
+-p : 將Host port 對應到 container 的 port</p>
+<p>bash : 以 /bin/bash 的 shell介面進行訪問 也有 /bin/sh 可選</p>
+<p>登入容器內的tty介面</p>
+<pre><code>docker exec -it &quot;container-id&quot; bash
+</code></pre>
+<p>容器的啟動關閉與重啟</p>
+<pre><code>docker start &quot;container-id&quot;
+docker stop &quot;container-id&quot;
+docker restart &quot;container-id&quot;
+</code></pre>
+<p>將容器狀態儲存成新的image檔</p>
+<pre><code>docker commit -m &quot;message&quot; &quot;container-id&quot; &quot;new-container-image&quot;
+</code></pre>
+<p>將容器的image檔 另存/讀取 成一個檔案</p>
+<pre><code>docker save -o image.tar &quot;container-image&quot; 
+docker load --input image.tar &quot;container-image&quot; 
+</code></pre>
+<p>移除執行中的容器</p>
+<pre><code>docker rm &quot;container-id&quot;
+</code></pre>
+<p>移除現有的容器image檔</p>
+<pre><code>docker rmi &quot;container-image&quot;
+</code></pre>
+<p>其他
+registry image 建立私有的container儲存庫</p>
+<div style="break-before: page; page-break-before: always;"></div><p>etcd</p>
+<h1 id="minikube"><a class="header" href="#minikube">minikube</a></h1>
+<pre><code>minikube start
+</code></pre>
+<h1 id="node---deployment---pod---container"><a class="header" href="#node---deployment---pod---container">node -&gt; deployment -&gt; pod -&gt; container</a></h1>
+<h1 id="主要使用-kinddeployment-來進行部屬-pod"><a class="header" href="#主要使用-kinddeployment-來進行部屬-pod">主要使用 kind:deployment 來進行部屬 pod</a></h1>
+<h1 id="deployment-可以偵測現有的pod群是否有在正常執行若因pod當中的項目造成當機之類的問題可以設定至少必須執行的pod數量deployment會自動刪除當掉的pod-並重新建立新的pod"><a class="header" href="#deployment-可以偵測現有的pod群是否有在正常執行若因pod當中的項目造成當機之類的問題可以設定至少必須執行的pod數量deployment會自動刪除當掉的pod-並重新建立新的pod">deployment 可以偵測現有的pod群是否有在正常執行，若因pod當中的項目造成當機之類的問題，可以設定至少必須執行的pod數量，deployment會自動刪除當掉的pod 並重新建立新的pod</a></h1>
+<pre><code>kubectl get pods
+kubectl get deployment
+kubectl get node
+kubectl get service
+</code></pre>
+<p>kubectl create -f
+kubectl create deployment</p>
+<p>kubectl </p>
+<h1 id="ingress---service---deployment"><a class="header" href="#ingress---service---deployment">Ingress -&gt; Service -&gt; deployment</a></h1>
+<p>Service 設定可以讓指定的容器跟外部進行連線
+Ingress 類似像apache 的 virtualhost</p>
+<p>ConfigMap 扮演不需要加密的字典檔</p>
+<p>Secret 與 ConfigMap 正好相反需要對部分設定檔進行加密</p>
+<p>Volumes
+emptyDir
+hostPath</p>
+<p>PVC(PersistentVolumeClaim) 會找 PV(PersistentVolume) 進行匹配
+若無則會以 StorageClass 建立新的&quot;動態匹配&quot;</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="python3-基礎"><a class="header" href="#python3-基礎">Python3 基礎</a></h1>
+<h2 id="安裝-pip3此為python3需注意python-3python-2版本問題"><a class="header" href="#安裝-pip3此為python3需注意python-3python-2版本問題">安裝 pip3(此為Python3)(需注意Python 3、Python 2版本問題)</a></h2>
+<p>wget https://bootstrap.pypa.io/get-pip.py<br />
+python get-pip.py<br />
+pip3</p>
+<hr />
+<h2 id="python工具"><a class="header" href="#python工具">Python工具</a></h2>
+<ul>
+<li>matplotlib.pyplot </li>
+<li>Matplotlib</li>
+<li>numpy</li>
+<li>(python-)tk(圖形介面)</li>
+<li>import Tkinter</li>
+</ul>
+<hr />
+<hr />
+<h2 id="其他判斷"><a class="header" href="#其他判斷">其他判斷</a></h2>
+<pre><code>len():長度 (PS 字串可以用)
+type():類型
+</code></pre>
+<h2 id="變數轉換"><a class="header" href="#變數轉換">變數轉換</a></h2>
+<pre><code>可以這樣用
+a=&quot;hello&quot;
+print(a[2])
+答案會是
+hello的l
+
+float()：轉換變數類型為 float
+int()：轉換變數類型為 int
+complex()：轉換變數類型為 complex (虛數)
+bool()：轉換變數類型為 bool
+str()：轉換變數類型為 str
+113.0625
+round(_, 2)
+113.06
+</code></pre>
+<hr />
+<h1 id="資料結構-listtuple-and-dictionary"><a class="header" href="#資料結構-listtuple-and-dictionary">資料結構 List,Tuple and Dictionary</a></h1>
+<h2 id="list"><a class="header" href="#list">List</a></h2>
+<p>my_List = [1,2,3,4,5] #跟陣列很像</p>
+<p>a.insert():(插入位置:資料) PS. a.insert(5,&quot;SS&quot;)</p>
+<h2 id="tuple"><a class="header" href="#tuple">tuple</a></h2>
+<p>跟List很像 無法新增修改刪除 用 tuple() 轉換</p>
+<hr />
+<h2 id="dictionary-1"><a class="header" href="#dictionary-1">dictionary</a></h2>
+<pre><code>a_dic = {
+    &quot;X&quot;: True,
+    &quot;Y&quot;: 1,
+    &quot;Z&quot;: &quot;XXAA&quot;
+}#類似json格式
+
+print(a_div[&quot;x&quot;])#這裡是[]中括弧
+
+</code></pre>
+<p>range() 函式 #生成等差級數</p>
+<hr />
+<h2 id="for-陳述式"><a class="header" href="#for-陳述式">for 陳述式</a></h2>
+<pre><code>for 還有另一種接近類似try cache
+
+for int i in range(5):
+    if 符合條件
+        break
+else:
+    #每當程式執行完一次未跳離迴圈(break)
+    print(&quot;顯示&quot;)
+
+</code></pre>
+<hr />
+<h2 id="if-陳述式"><a class="header" href="#if-陳述式">if 陳述式</a></h2>
+<pre><code>
+if x&gt;0:
+    print(&quot;X是正數&quot;)
+elif x==0:
+    print(&quot;X為0&quot;)
+else x&lt;0:
+    print(&quot;X為負數&quot;)
+
+</code></pre>
+<hr />
+<h2 id="while-陳述式"><a class="header" href="#while-陳述式">while 陳述式</a></h2>
+<pre><code>while b&lt;10:
+    print(&quot;X&quot;)
+    b++
+</code></pre>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="python3-到深度學習過程"><a class="header" href="#python3-到深度學習過程">Python3 到深度學習過程</a></h1>
+<h2 id="安裝-pip3此為python3需注意python-3python-2版本問題-1"><a class="header" href="#安裝-pip3此為python3需注意python-3python-2版本問題-1">安裝 pip3(此為Python3)(需注意Python 3、Python 2版本問題)</a></h2>
+<p>wget https://bootstrap.pypa.io/get-pip.py</p>
+<p>python get-pip.py</p>
+<p>pip3</p>
+<hr />
+<h2 id="python工具-1"><a class="header" href="#python工具-1">Python工具</a></h2>
+<ul>
+<li>matplotlib.pyplot</li>
+<li>numpy</li>
+<li>tensorflow</li>
+<li>virtualenv</li>
+</ul>
+<hr />
+<h1 id="numpy用法"><a class="header" href="#numpy用法">numpy用法</a></h1>
+<hr />
+<pre><code>import numpy as np
+
+a=np.array([46,8,11,11,4,56])
+
+print(a*30)
+
+=&gt;[1380 240 330 330 120 1680]
+</code></pre>
+<hr />
+<h1 id="virtualenv-建立虛擬環境"><a class="header" href="#virtualenv-建立虛擬環境">virtualenv 建立虛擬環境</a></h1>
+<hr />
+<pre><code>建立 virtualenv --system-site-packages -p python3 ./venv
+
+開啟虛擬環境 .\venv\Scripts\activate
+
+關閉虛擬環境 .\venv\Scripts\deactivate  
+</code></pre>
+<hr />
+<h1 id="tensorflow-筆記"><a class="header" href="#tensorflow-筆記">tensorflow 筆記</a></h1>
+<hr />
+<blockquote>
+<p>增加維度</p>
+</blockquote>
+<pre><code>x_train[..., tf.newaxis] x_train[tf.newaxis,...]
+
+增加維度 可往前或後增加一維
+
+使用前 shape [2,2]
+
+使用後 shape [2,2,1]
+
+</code></pre>
+<blockquote>
+<p>切換 tensorflow 版本</p>
+</blockquote>
+<pre><code>將 tensorflow 2 切換至 tensorflow 1.xx
+
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
+</code></pre>
+<blockquote>
+<p>重新調整維度大小</p>
+</blockquote>
+<pre><code>tf.reshape(x_train,[60000,28,28])
+</code></pre>
+<hr />
+<h1 id="matplotlibpyplotplt筆記"><a class="header" href="#matplotlibpyplotplt筆記">matplotlib.pyplot(plt筆記)</a></h1>
+<hr />
+<blockquote>
+<p>顯示圖片</p>
+</blockquote>
+<pre><code>plt.imshow(tf.reshape(x_train,[60000,28,28])[0])
+</code></pre>
+<blockquote>
+<p>顯示多項內容視窗</p>
+</blockquote>
+<pre><code>fig = plt.figure()
+(ax1,ax2) = fig.subplots(2,1)
+ax1.imshow(tf.reshape(x_train,[60000,28,28])[0])
+ax2.imshow(tf.reshape(x_test,[10000,28,28])[0])
+plt.show()
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><pre><code>自由之零：為了任何目的執行程式的自由。
+自由之一：研究程式如何運作的自由，並且將程式修改符合本身需求。程式碼的近用是實現這個自由的先決條件。
+自由之二：再次散佈程式的自由，以幫助你的鄰居。
+自由之三：改進程式的自由，並將這些改進回饋給社群，讓整個社群均可以因此而受益。程式碼的近用是實現這個自由的先決條件。
+</code></pre>
+<p>GPL v1 引用/修改/衍生自 GPL 授權程式碼的軟體也必須採用GPL授權 採用GPL授權需要公開程式碼 不允許二進制使用</p>
+<pre><code>v2 引用/修改/衍生自 GPL 授權程式碼的軟體也必須採用GPL授權 採用GPL授權需要公開程式碼 
+Liberty or Death  
+該條款旨在阻止任何一方使用專利侵權索賠或其他訴訟來損害用戶在授權條款下的自由
+
+
+GPLv2授權條款固然反對廠商藉由軟體授權的方式來收取權利金，但GPLv2授權條款其實不反商業行為，舉例來說，如果廠商是透過以下幾種方式來獲利，對於GPLv2授權條款的推廣其實更有助益，也不在禁止之列。例如：提供軟體的支援與諮詢服務、撰寫工具書、提供便於使用者操作的軟體介面，以及提供相關的測試以確保程式的效用等。易言之，GPLv2授權條款的擁護者認為，任何廠商均可以在提供更便於開放原始碼的使用基礎上，找出相關的利基而發展出一套獲利模式，進而獲取利潤
+
+以MontaVista為例，最初MontaVista採用免費提供原始碼的模式，而以服務與升級進行收費，但自2002年後的版本，即MontaVista Linux 2.0開始則必須透過付費的方式才能獲得相關的支援與升級程式、補釘（patch)。因為Monta Vista選擇利用分開散布的方式而免去 GPLv2 授權條款的規範。至於同樣以商用嵌入式Linux 平台為產品的WindRiver99，該公司所開發的WindRiver Linux 3.0同樣在形式上遵守GPLv2的規定而提供了Linux作業系統的原始碼 ，但對於相關產品的原始碼的流通與授權，則另外採取了相當嚴密的規範措施。
+
+
+v3 引用/修改/衍生自 GPL 授權程式碼的軟體也必須採用GPL授權 採用GPL授權需要公開程式碼 
+   增加 數位/專利授權條款
+   程式含有的專利使用權利也要一起授權出去，以保障使用者的自由。
+</code></pre>
+<p>LGPL v2.1 修改/衍生自 LGPL 授權程式碼的軟體也必須採用LGPL授權 
+僅僅只是 引用 則不需要公開程式碼
+(動態連結不需要公開程式碼) (靜態連結仍需要LGPL條款)</p>
+<pre><code> v3.0 修改/衍生自 LGPL 授權程式碼的軟體也必須採用LGPL授權 
+    　僅僅只是 引用  則不需要公開程式碼 
+     (動態連結/靜態連結 皆不需要公開程式碼 但需追加 明示使用(使用來源) ) 
+</code></pre>
+<p>特性 (可以同時使用的授權)
+GPL-3.0/LGPL-3.0 相容於 Apache License-2.0 
+GPL-2.0/LGPL-2.1 不相容於 Apache License-2.0<br />
+GPL 可以使用 雙授權模式(Dual License)</p>
+<p>能從 LGPL -&gt; GPL 轉換
+不能從 GPL -&gt; LGPL</p>
+<p>AGPL v1.0 GPL加強版  增加針對 「散佈」的定義 是針對程式的物理性移動(拷貝給別人，etc)，但AGPL包含程式如果是在客戶端執行也算在內</p>
+<p>MPL</p>
+<p>BSD</p>
+<p>MIT</p>
+<p>Apache License v2.0</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </body>
+</html>

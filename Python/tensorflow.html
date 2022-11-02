@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>tensorflow筆記 - ZYR&#x27;s note</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">mdbook筆記</li><li class="chapter-item expanded "><a href="../mdbook/note.html"><strong aria-hidden="true">1.</strong> mdbook 筆記</a></li><li class="chapter-item expanded "><a href="../Arch_Linux/Arch_Linux.html"><strong aria-hidden="true">2.</strong> Arch_Linux 安裝筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Arch_Linux/pi.html"><strong aria-hidden="true">2.1.</strong> Raspberry pi 3筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../CandCpulse/C.html"><strong aria-hidden="true">3.</strong> C</a></li><li class="chapter-item expanded "><a href="../CandCpulse/Cpulse.html"><strong aria-hidden="true">4.</strong> C ++</a></li><li class="chapter-item expanded "><a href="../C#/C_sharp.html"><strong aria-hidden="true">5.</strong> C #</a></li><li class="chapter-item expanded "><a href="../Git/Git.html"><strong aria-hidden="true">6.</strong> Git</a></li><li class="chapter-item expanded "><a href="../GPG/gpg.html"><strong aria-hidden="true">7.</strong> GPG</a></li><li class="chapter-item expanded "><a href="../JavaScript/React.html"><strong aria-hidden="true">8.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../Yubikey/Createkey.html"><strong aria-hidden="true">9.</strong> Yubikey</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Yubikey/git.html"><strong aria-hidden="true">9.1.</strong> Yubikey 使用gpg簽章驗證/上傳驗證</a></li></ol></li><li class="chapter-item expanded "><a href="../Kubernetes/Docker.html"><strong aria-hidden="true">10.</strong> Docker筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Kubernetes/Kubernetes.html"><strong aria-hidden="true">10.1.</strong> Kubernetes筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Python.html"><strong aria-hidden="true">11.</strong> Python筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/tensorflow.html" class="active"><strong aria-hidden="true">11.1.</strong> tensorflow筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Liences_learning/list.html"><strong aria-hidden="true">12.</strong> Liences筆記</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ZYR&#x27;s note</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="python3-到深度學習過程"><a class="header" href="#python3-到深度學習過程">Python3 到深度學習過程</a></h1>
+<h2 id="安裝-pip3此為python3需注意python-3python-2版本問題"><a class="header" href="#安裝-pip3此為python3需注意python-3python-2版本問題">安裝 pip3(此為Python3)(需注意Python 3、Python 2版本問題)</a></h2>
+<p>wget https://bootstrap.pypa.io/get-pip.py</p>
+<p>python get-pip.py</p>
+<p>pip3</p>
+<hr />
+<h2 id="python工具"><a class="header" href="#python工具">Python工具</a></h2>
+<ul>
+<li>matplotlib.pyplot</li>
+<li>numpy</li>
+<li>tensorflow</li>
+<li>virtualenv</li>
+</ul>
+<hr />
+<h1 id="numpy用法"><a class="header" href="#numpy用法">numpy用法</a></h1>
+<hr />
+<pre><code>import numpy as np
+
+a=np.array([46,8,11,11,4,56])
+
+print(a*30)
+
+=&gt;[1380 240 330 330 120 1680]
+</code></pre>
+<hr />
+<h1 id="virtualenv-建立虛擬環境"><a class="header" href="#virtualenv-建立虛擬環境">virtualenv 建立虛擬環境</a></h1>
+<hr />
+<pre><code>建立 virtualenv --system-site-packages -p python3 ./venv
+
+開啟虛擬環境 .\venv\Scripts\activate
+
+關閉虛擬環境 .\venv\Scripts\deactivate  
+</code></pre>
+<hr />
+<h1 id="tensorflow-筆記"><a class="header" href="#tensorflow-筆記">tensorflow 筆記</a></h1>
+<hr />
+<blockquote>
+<p>增加維度</p>
+</blockquote>
+<pre><code>x_train[..., tf.newaxis] x_train[tf.newaxis,...]
+
+增加維度 可往前或後增加一維
+
+使用前 shape [2,2]
+
+使用後 shape [2,2,1]
+
+</code></pre>
+<blockquote>
+<p>切換 tensorflow 版本</p>
+</blockquote>
+<pre><code>將 tensorflow 2 切換至 tensorflow 1.xx
+
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
+</code></pre>
+<blockquote>
+<p>重新調整維度大小</p>
+</blockquote>
+<pre><code>tf.reshape(x_train,[60000,28,28])
+</code></pre>
+<hr />
+<h1 id="matplotlibpyplotplt筆記"><a class="header" href="#matplotlibpyplotplt筆記">matplotlib.pyplot(plt筆記)</a></h1>
+<hr />
+<blockquote>
+<p>顯示圖片</p>
+</blockquote>
+<pre><code>plt.imshow(tf.reshape(x_train,[60000,28,28])[0])
+</code></pre>
+<blockquote>
+<p>顯示多項內容視窗</p>
+</blockquote>
+<pre><code>fig = plt.figure()
+(ax1,ax2) = fig.subplots(2,1)
+ax1.imshow(tf.reshape(x_train,[60000,28,28])[0])
+ax2.imshow(tf.reshape(x_test,[10000,28,28])[0])
+plt.show()
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Python/Python.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../Liences_learning/list.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Python/Python.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../Liences_learning/list.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

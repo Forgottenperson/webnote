@@ -1,0 +1,546 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Arch_Linux 安裝筆記 - ZYR&#x27;s note</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">mdbook筆記</li><li class="chapter-item expanded "><a href="../mdbook/note.html"><strong aria-hidden="true">1.</strong> mdbook 筆記</a></li><li class="chapter-item expanded "><a href="../Arch_Linux/Arch_Linux.html" class="active"><strong aria-hidden="true">2.</strong> Arch_Linux 安裝筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Arch_Linux/pi.html"><strong aria-hidden="true">2.1.</strong> Raspberry pi 3筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../CandCpulse/C.html"><strong aria-hidden="true">3.</strong> C</a></li><li class="chapter-item expanded "><a href="../CandCpulse/Cpulse.html"><strong aria-hidden="true">4.</strong> C ++</a></li><li class="chapter-item expanded "><a href="../C#/C_sharp.html"><strong aria-hidden="true">5.</strong> C #</a></li><li class="chapter-item expanded "><a href="../Git/Git.html"><strong aria-hidden="true">6.</strong> Git</a></li><li class="chapter-item expanded "><a href="../GPG/gpg.html"><strong aria-hidden="true">7.</strong> GPG</a></li><li class="chapter-item expanded "><a href="../JavaScript/React.html"><strong aria-hidden="true">8.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../Yubikey/Createkey.html"><strong aria-hidden="true">9.</strong> Yubikey</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Yubikey/git.html"><strong aria-hidden="true">9.1.</strong> Yubikey 使用gpg簽章驗證/上傳驗證</a></li></ol></li><li class="chapter-item expanded "><a href="../Kubernetes/Docker.html"><strong aria-hidden="true">10.</strong> Docker筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Kubernetes/Kubernetes.html"><strong aria-hidden="true">10.1.</strong> Kubernetes筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Python.html"><strong aria-hidden="true">11.</strong> Python筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/tensorflow.html"><strong aria-hidden="true">11.1.</strong> tensorflow筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Liences_learning/list.html"><strong aria-hidden="true">12.</strong> Liences筆記</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ZYR&#x27;s note</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="安裝arch-linux"><a class="header" href="#安裝arch-linux">安裝Arch Linux</a></h1>
+<p><a href="http://note.kurodigi.com/archlinux-uefi-install/">UEFI+GPT的Arch Linux安裝步驟(似乎有少寫請參考下面的連結)</a><br />
+<a href="http://www.wlintmp.net/2014/02/arch-linux.html">P.S.請參考這個網頁的mkinitcpio</a></p>
+<p>硬碟分割並建立分割區</p>
+<h2 id="gdisk"><a class="header" href="#gdisk">gdisk</a></h2>
+<pre><code>gdisk /dev/sda 進入分割系統環節
+
+&gt; o  
+建立硬碟 GPT 分割表
+&gt; n
+建立一個新磁區
+&gt; w
+寫入系統並離開分割環節
+</code></pre>
+<p>在這裡最少須建立下列分割磁區 未提及項目則使用預設</p>
+<ul>
+<li>Boot (開機磁區) (sda1)
+<ul>
+<li>Last sector: +512MB</li>
+<li>GUID : EF00  (標記成 EFI) </li>
+</ul>
+</li>
+<li>swap (記憶體交換區) (sda2)
+<ul>
+<li>Last sector : +1G</li>
+<li>GUID : 8200 (標記成 Linux swap)</li>
+</ul>
+</li>
+<li>root / (根目錄) (sda3)
+<ul>
+<li>Last sector: 皆可</li>
+<li>GUID : 8300 (標記成 Linux 硬體空間)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<p>mkfs.vfat -F32 /dev/sda1</p>
+<p>將 Boot 磁區格式化成 FAT32</p>
+<p>mkfs.ext4 /dev/sda3</p>
+<p>將 root 磁區格式化成 ext4</p>
+<p>mkswap /dev/sda2
+swapon /dev/sda2</p>
+<p>將 swap 磁區標記成 swap</p>
+<hr />
+<p>掛載硬碟</p>
+<p>mount /dev/sda3 /mnt</p>
+<p>mkdir /mnt/boot 建立 boot 資料夾</p>
+<p>mount /dev/sda1 /mnt/boot</p>
+<hr />
+<blockquote>
+<p>/etc/pacman.d/mirrorlist 是 pacman 套件管理的下載來源 </p>
+</blockquote>
+<p>開始安裝主系統</p>
+<p>pacstrap -i /mnt base base-devel linux</p>
+<hr />
+<h2 id="建立-fstab-開機自動掛載項目"><a class="header" href="#建立-fstab-開機自動掛載項目">建立 fstab (開機自動掛載項目)</a></h2>
+<p>genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab</p>
+<hr />
+<p>arch-chroot /mnt /bin/bash</p>
+<p>移動至安裝完的系統中</p>
+<hr />
+<h2 id="修改語系"><a class="header" href="#修改語系">修改語系</a></h2>
+<p>修改 /etc/locale.gen</p>
+<p>把會使用到的語系取消註解後儲存</p>
+<p>執行 locale-gen</p>
+<p>echo LANG=en_US.UTF-8 &gt; /etc/locale.conf
+export LANG=en_US.UTF-8</p>
+<hr />
+<h2 id="修改時區"><a class="header" href="#修改時區">修改時區</a></h2>
+<p>ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime</p>
+<p>hwclock -u -w</p>
+<hr />
+<h2 id="修改-hostname"><a class="header" href="#修改-hostname">修改 hostname</a></h2>
+<p>echo 名稱 &gt; /etc/hostname</p>
+<hr />
+<h2 id="修改-root--密碼"><a class="header" href="#修改-root--密碼">修改 root  密碼</a></h2>
+<p>passwd</p>
+<hr />
+<h2 id="建立開機映像檔"><a class="header" href="#建立開機映像檔">建立開機映像檔</a></h2>
+<p>mkinitcpio -p linux</p>
+<hr />
+<h2 id="載入模組"><a class="header" href="#載入模組">載入模組</a></h2>
+<p>modprobe dm-mod </p>
+<hr />
+<h2 id="安裝-grub-開機管理清單"><a class="header" href="#安裝-grub-開機管理清單">安裝 grub 開機管理清單</a></h2>
+<pre><code>pacman -S grub dosfstools efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck --debug
+grub-mkconfig -o /boot/grub/grub.cfg
+
+mkdir /boot/EFI/boot
+cp /boot/EFI/arch_grub/grubx64.efi  /boot/EFI/boot/bootx64.efi
+</code></pre>
+<hr />
+<h1 id="安裝arch-linux後"><a class="header" href="#安裝arch-linux後">安裝Arch Linux後</a></h1>
+<h3 id="接下來安裝桌面環境也可以不裝再裝之前請先務必確認你已經有建立新的使用者並有用visudo-來完成為這位新使用者給予root權限"><a class="header" href="#接下來安裝桌面環境也可以不裝再裝之前請先務必確認你已經有建立新的使用者並有用visudo-來完成為這位新使用者給予root權限">接下來安裝桌面環境，也可以不裝，再裝之前請先務必確認你已經有建立新的使用者，並有用visudo 來完成為這位新使用者給予root權限</a></h3>
+<h4 id="以下為pacman--s-軟體名稱"><a class="header" href="#以下為pacman--s-軟體名稱">以下為pacman -S 軟體名稱</a></h4>
+<h2 id="圖形介面"><a class="header" href="#圖形介面">圖形介面</a></h2>
+<p>pacman -S xorg-server xorg-server-utils(xorg-apps) xorg-xinit</p>
+<h2 id="顯示驅動程式擇一"><a class="header" href="#顯示驅動程式擇一">顯示驅動程式(擇一)</a></h2>
+<ul>
+<li>AMD- xf86-video-amdgpu</li>
+<li>Intel- xf86-video-intel</li>
+<li>Nvidia- xf86-video-nouveau</li>
+<li>VMware- 
+<ul>
+<li>open-vm-tools </li>
+<li>xf86-video-vmware </li>
+<li>xf86-input-vmmouse</li>
+<li>(VMware 底下的元件都要安裝) 並啟用 vmtoolsd.service</li>
+</ul>
+</li>
+</ul>
+<h2 id="登入圖形管理擇一"><a class="header" href="#登入圖形管理擇一">登入圖形管理(擇一)</a></h2>
+<ul>
+<li>KDE Plasma 5 - sddm</li>
+<li>KDE4 -kdm</li>
+<li>GNOME - gdm</li>
+<li>LXDE -lxdm</li>
+<li>Universal Display Managers - lightdm</li>
+<li>mdm-display-manager</li>
+<li>slim</li>
+<li>xorg-xdm</li>
+</ul>
+<h2 id="桌面管理擇一"><a class="header" href="#桌面管理擇一">桌面管理(擇一)</a></h2>
+<ul>
+<li>KDE Plasma 5 - plasma  plasma-wayland-session</li>
+<li>Cinnamon- cinnamon</li>
+<li>gnome - gnome</li>
+<li>LXDE -lxde</li>
+<li>MATE -mate</li>
+<li>XFCE -xfce4</li>
+<li>i3(i3-wm)-i3</li>
+<li>i3-gaps</li>
+</ul>
+<h2 id="桌面管理應用程式擇一"><a class="header" href="#桌面管理應用程式擇一">桌面管理應用程式(擇一)</a></h2>
+<ul>
+<li>KDE Plasma 5 -kde-applications</li>
+<li>Cinnamon- N/A</li>
+<li>gnome - gnome-extra</li>
+<li>LXDE -N/A</li>
+<li>MATE -mate-extra</li>
+<li>XFCE -xfce4-goodies</li>
+<li>i3
+<ul>
+<li>thunar</li>
+<li>xwallpaper</li>
+<li>picom
+<ul>
+<li>附註 設置 opacity-rule 可以調整透明度</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="圖形化terminel終端機擇一或自己找"><a class="header" href="#圖形化terminel終端機擇一或自己找">圖形化terminel終端機(擇一或自己找)</a></h2>
+<ul>
+<li>gnome-terminal</li>
+<li>rxvt-terminal</li>
+<li>i3 
+<ul>
+<li>alacritty</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h1 id="相關功能設定"><a class="header" href="#相關功能設定">相關功能設定</a></h1>
+<h2 id="網路管理器可裝也可不裝"><a class="header" href="#網路管理器可裝也可不裝">網路管理器(可裝也可不裝)</a></h2>
+<p>pacman -S networkmanager</p>
+<p>安裝網路管理服務的UI</p>
+<p>pacman -S network-manager-applet</p>
+<hr />
+<h2 id="無線網路"><a class="header" href="#無線網路">無線網路</a></h2>
+<p>安裝無線工具</p>
+<p>pacman -S wireless_tools</p>
+<p>systemctl disable dhcpcd.service</p>
+<p>systemctl enable NetworkManager.service</p>
+<hr />
+<h2 id="wifi-設定及使用etcwpa_supplicant"><a class="header" href="#wifi-設定及使用etcwpa_supplicant">wifi 設定及使用(etc/wpa_supplicant)</a></h2>
+<p>在wpa_supplicant </p>
+<p>建立home_wifi (可以隨意自己取名)</p>
+<blockquote>
+<p>sudo nano /etc/wpa_supplicant/home_wifi</p>
+</blockquote>
+<pre><code>network={
+ssid=”neworkname”
+psk=”password”
+}
+</code></pre>
+<p>設定無線網卡</p>
+<blockquote>
+<p>wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/home_wifi &amp;</p>
+</blockquote>
+<p>啟動無線網卡</p>
+<blockquote>
+<p>dhcpcd wlan0</p>
+</blockquote>
+<h2 id="佈景主題可裝也可不裝"><a class="header" href="#佈景主題可裝也可不裝">佈景主題(可裝也可不裝)</a></h2>
+<ul>
+<li>Minty</li>
+<li>New-Minty</li>
+<li>Adwaita-dark</li>
+<li>elementary</li>
+</ul>
+<hr />
+<h2 id="建議安裝程式可裝也可不裝"><a class="header" href="#建議安裝程式可裝也可不裝">建議安裝程式(可裝也可不裝)</a></h2>
+<p>以下為pacman -S 軟體名稱(P.S 升級系統為 pacman -Syu)</p>
+<ul>
+<li>screenfetch</li>
+<li>wget、curl</li>
+<li>git</li>
+<li>smplayer</li>
+<li>omxplayer  (ARM)推薦</li>
+</ul>
+<hr />
+<p>下面這個建議是用 bash *.sh 來安裝，檔案請到該官網去下載</p>
+<ul>
+<li>jupyter-notebook</li>
+</ul>
+<hr />
+<h1 id="中文語言介面與輸入法"><a class="header" href="#中文語言介面與輸入法">(中文)語言介面與輸入法</a></h1>
+<p>~/.config/locale.conf 寫入</p>
+<pre><code>LANG=&quot;zh_TW.UTF-8&quot;
+</code></pre>
+<p>字形</p>
+<p>pacman -S ttf-droid</p>
+<p>fc-cache -v</p>
+<p>接著設定XIM環境變數</p>
+<p>export GTK_IM_MODULE=ibus</p>
+<p>export XMODIFIERS=@im=ibus</p>
+<p>export QT_IM_MODULE=ibus</p>
+<p>接著安裝輸入法</p>
+<p>pacman -S ibus</p>
+<p>pacman -S ibus-pinyin ibus-libpinyin </p>
+<p>ibus-setup</p>
+<p>將下列內容寫入家目錄下的.xinitrc</p>
+<pre><code>ibus-daemon -xrd
+</code></pre>
+<hr />
+<p>請在官網的AUR找出以下套件的 (PKGBUILD)</p>
+<ul>
+<li>package-query</li>
+<li>yaourt</li>
+</ul>
+<h4 id="aur-請依照下面的順序安裝-yaourt套件"><a class="header" href="#aur-請依照下面的順序安裝-yaourt套件">AUR 請依照下面的順序安裝 yaourt套件</a></h4>
+<pre><code>	git clone https://.../X.git
+	cd .../X
+	makepkg -si (要有PKGBUILD) 基本會再 git 裡 沒有的話再找找
+</code></pre>
+<pre><code>makepkg -si (要有PKGBUILD)
+可以拆解成
+</code></pre>
+<pre><code>	makepkg -s PKGBUILD
+	pacman -U *.pkg.tar.xz
+</code></pre>
+<h3 id="yaourt-完成後請輸入此格式來安裝yaourt--s-軟體名稱"><a class="header" href="#yaourt-完成後請輸入此格式來安裝yaourt--s-軟體名稱">yaourt 完成後請輸入此格式來安裝(yaourt -S 軟體名稱)</a></h3>
+<hr />
+<p>以下為AUR套件 必須要用 yaourt 請確認有裝好 yaourt -S 軟體名稱</p>
+<ul>
+<li>Visual Studio Code</li>
+</ul>
+<hr />
+<hr />
+<h1 id="環境元件組合研究"><a class="header" href="#環境元件組合研究">環境元件組合研究</a></h1>
+<ul>
+<li>compiz(adwaita)</li>
+<li>conky conky2 Conky-Colors(系統環境詳細資訊)</li>
+<li>cairo-docky { Numix[GTK2] Numix-Circle-Light } &amp;&amp; Docky(Plank)</li>
+</ul>
+<hr />
+<ul>
+<li>(i3-gaps)</li>
+<li>Ranger</li>
+<li>Polybar-Font Awesome-RobotoMono</li>
+<li>Arc-theme </li>
+<li>Rofi -Sardi-Mono</li>
+<li>Dunst</li>
+<li>betterlockscreen</li>
+<li>Pywal </li>
+</ul>
+<hr />
+<p>mate 桌布背景幻燈片設定 <a href="https://github.com/robertmodesty/make-slideshow-wallpaper/blob/master/mksldshw">原github</a></p>
+<hr />
+<hr />
+<h1 id="linux-功能說明"><a class="header" href="#linux-功能說明">Linux 功能說明</a></h1>
+<h2 id="ssh"><a class="header" href="#ssh">ssh</a></h2>
+<pre><code>在自己的家目錄下建立 ~/.ssh/authorized_keys 將公鑰放入並以行區分
+.ssh 權限 700
+authorized_key  權限 600
+
+連接登入時
+ssh -i (要使用其私鑰登入的路徑或名稱) Account@ip  
+// 選擇要登入的帳戶@找到對方的 IPv4 或 IPv6 的位置 
+
+</code></pre>
+<h2 id="ssh-tunnel"><a class="header" href="#ssh-tunnel">ssh Tunnel</a></h2>
+<pre><code>//本地機器連到遠端機器
+ssh -L (本地的Port):(遠端的(Local address)):(遠端的(Local address)的Port)  (遠端存取資源電腦的帳戶):(遠端ip位址)
+//遠端機器連回本地機器
+ssh -N -R (遠端的Port):(本地位址(localhost)):(本地位址的Port)   (遠端ip位址)
+</code></pre>
+<h2 id="使用者新增"><a class="header" href="#使用者新增">使用者新增</a></h2>
+<pre><code>useradd -m -g users -s /bin/bash {Name}
+-m 為這個使用者建立資料夾
+-g 設定群組 users
+-s 設定shell
+</code></pre>
+<h2 id="背景執行"><a class="header" href="#背景執行">背景執行</a></h2>
+<pre><code>在該 command 最後加上 &amp;
+
+查詢當下背景執行的 command
+&gt; jobs
+
+已經執行的 command 放入倍警
+Ctrl+Z 暫停
+&gt; bg %(number)
+
+把背景的工作切換到前面
+&gt; fg %(number)
+
+登出不停止工作
+&gt; nohup 
+</code></pre>
+<h2 id="靜態dnswifi"><a class="header" href="#靜態dnswifi">靜態DNS(WIFI)</a></h2>
+<pre><code>dhcpcd
+需要設定成靜態DNS的時候
+/etc/dhcpcd.conf
+---
+static domain_name_servers=8.8.8.8 8.8.4.4
+
+
+在
+/etc/resolv.conf
+可以看到取得的 DNS
+
+</code></pre>
+<h2 id="vmware-設定"><a class="header" href="#vmware-設定">VMware 設定</a></h2>
+<pre><code>vmware-hgfsclient
+在虛擬機中使用此指令可以看到 VMware 有設定分享檔案的名稱
+
+mkdir &lt;shared folders root directory&gt;
+sudo vmhgfs-fuse -o allow_other -o auto_unmount .host:/&lt;shared_folder&gt; &lt;shared folders root directory&gt;
+建立資料夾並掛載 VMware 所分享的資料夾
+</code></pre>
+<h2 id="etcskel-目錄"><a class="header" href="#etcskel-目錄">/etc/skel 目錄</a></h2>
+<pre><code>建立新使用者時 所預設的資料夾模版目錄
+</code></pre>
+<hr />
+<h2 id="rm"><a class="header" href="#rm">rm</a></h2>
+<pre><code>rm -d 刪除空目錄  
+rm -r 遞回刪除資料夾內檔案
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../mdbook/note.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../Arch_Linux/pi.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../mdbook/note.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../Arch_Linux/pi.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

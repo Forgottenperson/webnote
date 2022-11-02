@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Liences筆記 - ZYR&#x27;s note</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">mdbook筆記</li><li class="chapter-item expanded "><a href="../mdbook/note.html"><strong aria-hidden="true">1.</strong> mdbook 筆記</a></li><li class="chapter-item expanded "><a href="../Arch_Linux/Arch_Linux.html"><strong aria-hidden="true">2.</strong> Arch_Linux 安裝筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Arch_Linux/pi.html"><strong aria-hidden="true">2.1.</strong> Raspberry pi 3筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../CandCpulse/C.html"><strong aria-hidden="true">3.</strong> C</a></li><li class="chapter-item expanded "><a href="../CandCpulse/Cpulse.html"><strong aria-hidden="true">4.</strong> C ++</a></li><li class="chapter-item expanded "><a href="../C#/C_sharp.html"><strong aria-hidden="true">5.</strong> C #</a></li><li class="chapter-item expanded "><a href="../Git/Git.html"><strong aria-hidden="true">6.</strong> Git</a></li><li class="chapter-item expanded "><a href="../GPG/gpg.html"><strong aria-hidden="true">7.</strong> GPG</a></li><li class="chapter-item expanded "><a href="../JavaScript/React.html"><strong aria-hidden="true">8.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../Yubikey/Createkey.html"><strong aria-hidden="true">9.</strong> Yubikey</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Yubikey/git.html"><strong aria-hidden="true">9.1.</strong> Yubikey 使用gpg簽章驗證/上傳驗證</a></li></ol></li><li class="chapter-item expanded "><a href="../Kubernetes/Docker.html"><strong aria-hidden="true">10.</strong> Docker筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Kubernetes/Kubernetes.html"><strong aria-hidden="true">10.1.</strong> Kubernetes筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Python.html"><strong aria-hidden="true">11.</strong> Python筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/tensorflow.html"><strong aria-hidden="true">11.1.</strong> tensorflow筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Liences_learning/list.html" class="active"><strong aria-hidden="true">12.</strong> Liences筆記</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">ZYR&#x27;s note</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <pre><code>自由之零：為了任何目的執行程式的自由。
+自由之一：研究程式如何運作的自由，並且將程式修改符合本身需求。程式碼的近用是實現這個自由的先決條件。
+自由之二：再次散佈程式的自由，以幫助你的鄰居。
+自由之三：改進程式的自由，並將這些改進回饋給社群，讓整個社群均可以因此而受益。程式碼的近用是實現這個自由的先決條件。
+</code></pre>
+<p>GPL v1 引用/修改/衍生自 GPL 授權程式碼的軟體也必須採用GPL授權 採用GPL授權需要公開程式碼 不允許二進制使用</p>
+<pre><code>v2 引用/修改/衍生自 GPL 授權程式碼的軟體也必須採用GPL授權 採用GPL授權需要公開程式碼 
+Liberty or Death  
+該條款旨在阻止任何一方使用專利侵權索賠或其他訴訟來損害用戶在授權條款下的自由
+
+
+GPLv2授權條款固然反對廠商藉由軟體授權的方式來收取權利金，但GPLv2授權條款其實不反商業行為，舉例來說，如果廠商是透過以下幾種方式來獲利，對於GPLv2授權條款的推廣其實更有助益，也不在禁止之列。例如：提供軟體的支援與諮詢服務、撰寫工具書、提供便於使用者操作的軟體介面，以及提供相關的測試以確保程式的效用等。易言之，GPLv2授權條款的擁護者認為，任何廠商均可以在提供更便於開放原始碼的使用基礎上，找出相關的利基而發展出一套獲利模式，進而獲取利潤
+
+以MontaVista為例，最初MontaVista採用免費提供原始碼的模式，而以服務與升級進行收費，但自2002年後的版本，即MontaVista Linux 2.0開始則必須透過付費的方式才能獲得相關的支援與升級程式、補釘（patch)。因為Monta Vista選擇利用分開散布的方式而免去 GPLv2 授權條款的規範。至於同樣以商用嵌入式Linux 平台為產品的WindRiver99，該公司所開發的WindRiver Linux 3.0同樣在形式上遵守GPLv2的規定而提供了Linux作業系統的原始碼 ，但對於相關產品的原始碼的流通與授權，則另外採取了相當嚴密的規範措施。
+
+
+v3 引用/修改/衍生自 GPL 授權程式碼的軟體也必須採用GPL授權 採用GPL授權需要公開程式碼 
+   增加 數位/專利授權條款
+   程式含有的專利使用權利也要一起授權出去，以保障使用者的自由。
+</code></pre>
+<p>LGPL v2.1 修改/衍生自 LGPL 授權程式碼的軟體也必須採用LGPL授權 
+僅僅只是 引用 則不需要公開程式碼
+(動態連結不需要公開程式碼) (靜態連結仍需要LGPL條款)</p>
+<pre><code> v3.0 修改/衍生自 LGPL 授權程式碼的軟體也必須採用LGPL授權 
+    　僅僅只是 引用  則不需要公開程式碼 
+     (動態連結/靜態連結 皆不需要公開程式碼 但需追加 明示使用(使用來源) ) 
+</code></pre>
+<p>特性 (可以同時使用的授權)
+GPL-3.0/LGPL-3.0 相容於 Apache License-2.0 
+GPL-2.0/LGPL-2.1 不相容於 Apache License-2.0<br />
+GPL 可以使用 雙授權模式(Dual License)</p>
+<p>能從 LGPL -&gt; GPL 轉換
+不能從 GPL -&gt; LGPL</p>
+<p>AGPL v1.0 GPL加強版  增加針對 「散佈」的定義 是針對程式的物理性移動(拷貝給別人，etc)，但AGPL包含程式如果是在客戶端執行也算在內</p>
+<p>MPL</p>
+<p>BSD</p>
+<p>MIT</p>
+<p>Apache License v2.0</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Python/tensorflow.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Python/tensorflow.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
