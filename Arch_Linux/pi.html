@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">mdbook筆記</li><li class="chapter-item expanded "><a href="../mdbook/note.html"><strong aria-hidden="true">1.</strong> mdbook 筆記</a></li><li class="chapter-item expanded "><a href="../Arch_Linux/Arch_Linux.html"><strong aria-hidden="true">2.</strong> Arch_Linux 安裝筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Arch_Linux/pi.html" class="active"><strong aria-hidden="true">2.1.</strong> Raspberry pi 3筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../CandCpulse/C.html"><strong aria-hidden="true">3.</strong> C</a></li><li class="chapter-item expanded "><a href="../CandCpulse/Cpulse.html"><strong aria-hidden="true">4.</strong> C ++</a></li><li class="chapter-item expanded "><a href="../C#/C_sharp.html"><strong aria-hidden="true">5.</strong> C #</a></li><li class="chapter-item expanded "><a href="../Git/Git.html"><strong aria-hidden="true">6.</strong> Git</a></li><li class="chapter-item expanded "><a href="../GPG/gpg.html"><strong aria-hidden="true">7.</strong> GPG</a></li><li class="chapter-item expanded "><a href="../JavaScript/React.html"><strong aria-hidden="true">8.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../Yubikey/Createkey.html"><strong aria-hidden="true">9.</strong> Yubikey</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Yubikey/git.html"><strong aria-hidden="true">9.1.</strong> Yubikey 使用gpg簽章驗證/上傳驗證</a></li></ol></li><li class="chapter-item expanded "><a href="../Kubernetes/Docker.html"><strong aria-hidden="true">10.</strong> Docker筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Kubernetes/Kubernetes.html"><strong aria-hidden="true">10.1.</strong> Kubernetes筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Python.html"><strong aria-hidden="true">11.</strong> Python筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/tensorflow.html"><strong aria-hidden="true">11.1.</strong> tensorflow筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Liences_learning/list.html"><strong aria-hidden="true">12.</strong> Liences筆記</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">mdbook筆記</li><li class="chapter-item expanded "><a href="../mdbook/note.html"><strong aria-hidden="true">1.</strong> mdbook 筆記</a></li><li class="chapter-item expanded "><a href="../Arch_Linux/Arch_Linux.html"><strong aria-hidden="true">2.</strong> Arch_Linux 安裝筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Arch_Linux/pi.html" class="active"><strong aria-hidden="true">2.1.</strong> Raspberry pi 3筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../CandCpulse/C.html"><strong aria-hidden="true">3.</strong> C</a></li><li class="chapter-item expanded "><a href="../CandCpulse/Cpulse.html"><strong aria-hidden="true">4.</strong> C ++</a></li><li class="chapter-item expanded "><a href="../Csharp/C_sharp.html"><strong aria-hidden="true">5.</strong> C #</a></li><li class="chapter-item expanded "><a href="../Git/Git.html"><strong aria-hidden="true">6.</strong> Git</a></li><li class="chapter-item expanded "><a href="../GPG/gpg.html"><strong aria-hidden="true">7.</strong> GPG</a></li><li class="chapter-item expanded "><a href="../JavaScript/React.html"><strong aria-hidden="true">8.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../Yubikey/Createkey.html"><strong aria-hidden="true">9.</strong> Yubikey</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Yubikey/git.html"><strong aria-hidden="true">9.1.</strong> Yubikey 使用gpg簽章驗證/上傳驗證</a></li></ol></li><li class="chapter-item expanded "><a href="../Kubernetes/Docker.html"><strong aria-hidden="true">10.</strong> Docker筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Kubernetes/Kubernetes.html"><strong aria-hidden="true">10.1.</strong> Kubernetes筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Python.html"><strong aria-hidden="true">11.</strong> Python筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/tensorflow.html"><strong aria-hidden="true">11.1.</strong> tensorflow筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Liences_learning/list.html"><strong aria-hidden="true">12.</strong> Liences筆記</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -142,7 +142,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="個人使用桌面環境安裝"><a class="header" href="#個人使用桌面環境安裝">個人使用桌面環境安裝</a></h2>
+                        <h1 id="個人使用桌面環境安裝"><a class="header" href="#個人使用桌面環境安裝">個人使用桌面環境安裝</a></h1>
 <ul>
 <li>pacman -Syu alsa-firmware alsaplayer alsa-lib alsa-utils alsa-plugins //Pi驅動程式</li>
 <li>i3(i3-wm) // desktop</li>
@@ -158,19 +158,18 @@
  sudo amixer cset numid=3 &lt;n&gt;
  0=auto, 1=analog, 2=hdmi
 </code></pre>
-<p>=============================</p>
 <pre><code>hdmi_force_hotplug=1
 hdmi_force_edid_audio=1
 arm_control=0x200 64bit
 </code></pre>
-<hr />
+<h1 id="omxplayer使用"><a class="header" href="#omxplayer使用">omxplayer使用</a></h1>
 <p>python install --upgrade youtube-dl</p>
 <pre><code>youtube-dl -F &lt;youtube-url&gt; 
 omxplayer `youtube-dl -g -f &lt;format_id&gt; &lt;youtube-url&gt;` 
 
 Exp:omxplayer -o local --win 0,0,1280,720 `youtube-dl -g -f best &lt;youtube-url&gt;`
 </code></pre>
-<h2 id="無線網路wifietcwpa_supplicant"><a class="header" href="#無線網路wifietcwpa_supplicant">無線網路(wifi)(etc/wpa_supplicant)</a></h2>
+<h1 id="無線網路wifietcwpa_supplicant"><a class="header" href="#無線網路wifietcwpa_supplicant">無線網路(wifi)(etc/wpa_supplicant)</a></h1>
 <p>在wpa_supplicant
 建立home_wifi (可以隨意自己取名)</p>
 <pre><code>sudo nano /etc/wpa_supplicant/home_wifi

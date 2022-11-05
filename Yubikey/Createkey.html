@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">mdbook筆記</li><li class="chapter-item expanded "><a href="../mdbook/note.html"><strong aria-hidden="true">1.</strong> mdbook 筆記</a></li><li class="chapter-item expanded "><a href="../Arch_Linux/Arch_Linux.html"><strong aria-hidden="true">2.</strong> Arch_Linux 安裝筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Arch_Linux/pi.html"><strong aria-hidden="true">2.1.</strong> Raspberry pi 3筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../CandCpulse/C.html"><strong aria-hidden="true">3.</strong> C</a></li><li class="chapter-item expanded "><a href="../CandCpulse/Cpulse.html"><strong aria-hidden="true">4.</strong> C ++</a></li><li class="chapter-item expanded "><a href="../C#/C_sharp.html"><strong aria-hidden="true">5.</strong> C #</a></li><li class="chapter-item expanded "><a href="../Git/Git.html"><strong aria-hidden="true">6.</strong> Git</a></li><li class="chapter-item expanded "><a href="../GPG/gpg.html"><strong aria-hidden="true">7.</strong> GPG</a></li><li class="chapter-item expanded "><a href="../JavaScript/React.html"><strong aria-hidden="true">8.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../Yubikey/Createkey.html" class="active"><strong aria-hidden="true">9.</strong> Yubikey</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Yubikey/git.html"><strong aria-hidden="true">9.1.</strong> Yubikey 使用gpg簽章驗證/上傳驗證</a></li></ol></li><li class="chapter-item expanded "><a href="../Kubernetes/Docker.html"><strong aria-hidden="true">10.</strong> Docker筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Kubernetes/Kubernetes.html"><strong aria-hidden="true">10.1.</strong> Kubernetes筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Python.html"><strong aria-hidden="true">11.</strong> Python筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/tensorflow.html"><strong aria-hidden="true">11.1.</strong> tensorflow筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Liences_learning/list.html"><strong aria-hidden="true">12.</strong> Liences筆記</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">mdbook筆記</li><li class="chapter-item expanded "><a href="../mdbook/note.html"><strong aria-hidden="true">1.</strong> mdbook 筆記</a></li><li class="chapter-item expanded "><a href="../Arch_Linux/Arch_Linux.html"><strong aria-hidden="true">2.</strong> Arch_Linux 安裝筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Arch_Linux/pi.html"><strong aria-hidden="true">2.1.</strong> Raspberry pi 3筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../CandCpulse/C.html"><strong aria-hidden="true">3.</strong> C</a></li><li class="chapter-item expanded "><a href="../CandCpulse/Cpulse.html"><strong aria-hidden="true">4.</strong> C ++</a></li><li class="chapter-item expanded "><a href="../Csharp/C_sharp.html"><strong aria-hidden="true">5.</strong> C #</a></li><li class="chapter-item expanded "><a href="../Git/Git.html"><strong aria-hidden="true">6.</strong> Git</a></li><li class="chapter-item expanded "><a href="../GPG/gpg.html"><strong aria-hidden="true">7.</strong> GPG</a></li><li class="chapter-item expanded "><a href="../JavaScript/React.html"><strong aria-hidden="true">8.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../Yubikey/Createkey.html" class="active"><strong aria-hidden="true">9.</strong> Yubikey</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Yubikey/git.html"><strong aria-hidden="true">9.1.</strong> Yubikey 使用gpg簽章驗證/上傳驗證</a></li></ol></li><li class="chapter-item expanded "><a href="../Kubernetes/Docker.html"><strong aria-hidden="true">10.</strong> Docker筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Kubernetes/Kubernetes.html"><strong aria-hidden="true">10.1.</strong> Kubernetes筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Python.html"><strong aria-hidden="true">11.</strong> Python筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/tensorflow.html"><strong aria-hidden="true">11.1.</strong> tensorflow筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Liences_learning/list.html"><strong aria-hidden="true">12.</strong> Liences筆記</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -154,55 +154,66 @@
 <li>GPG2 (OpenPGP)</li>
 </ul>
 <h2 id="教學"><a class="header" href="#教學">教學</a></h2>
-<pre><code>首次須先修改Yubikey 密碼
-gpg2 --card-edit
-可以看自己的Yubikey OpenPGP資訊
-之後輸入
-&gt;admin
-&gt;passwd
-
-改密碼請修改PIN &amp; Admin PIN
-
-
-建立金鑰
-gpg2 --export --full-gen-key
-
-如果要備份
-gpg2 --export-secret-subkey --armor (KeyWord) subkey
+<p>首次須先修改Yubikey 密碼</p>
+<p>gpg2 --card-edit</p>
+<p>可以看自己的Yubikey OpenPGP資訊</p>
+<p>之後輸入</p>
+<blockquote>
+<p>admin</p>
+</blockquote>
+<blockquote>
+<p>passwd</p>
+</blockquote>
+<p>改密碼請修改PIN &amp; Admin PIN</p>
+<p>建立金鑰</p>
+<blockquote>
+<p>gpg2 --export --full-gen-key</p>
+</blockquote>
+<p>如果要備份</p>
+<blockquote>
+<p>gpg2 --export-secret-subkey --armor (KeyWord) subkey
 gpg2 --export-secret-key --armor (KeyWord) privatekey
-gpg2 --export --armor (KeyWord)  publickey
-
-建立子鑰
-gpg2 --expert --edit-key (KeyWord)
-&gt;addkey
-RSA (set your own capabilities) 2048/4096
-Current allowed actions: Sign Encrypt
-是開關式
-選擇到剩下 authenticate capability
-
-&gt;Save
-
-
-匯入
-gpg2 --edit-key (KeyWord)
-&gt;toggle
-&gt;keytocard
-回答1
-
-選擇第一個subkey
-&gt;key 1 
-&gt;keytocard
-只能回答2
-
-取消選擇第一個子鑰，選擇第2個子鑰
-&gt;key 1
-&gt;key 2
-&gt;keytocard
-
-只能回答3
-
-&gt;Save
-</code></pre>
+gpg2 --export --armor (KeyWord)  publickey</p>
+</blockquote>
+<p>建立子鑰</p>
+<p>gpg2 --expert --edit-key (KeyWord)</p>
+<blockquote>
+<p>addkey</p>
+</blockquote>
+<p>RSA (set your own capabilities) 2048/4096</p>
+<p>Current allowed actions: Sign Encrypt</p>
+<p>是開關式</p>
+<p>選擇到剩下 authenticate capability</p>
+<blockquote>
+<p>Save</p>
+</blockquote>
+<p>匯入</p>
+<blockquote>
+<p>gpg2 --edit-key (KeyWord)
+toggle
+keytocard</p>
+</blockquote>
+<p>回答1</p>
+<p>選擇第一個subkey</p>
+<blockquote>
+<p>key 1 
+keytocard</p>
+</blockquote>
+<p>只能回答2</p>
+<p>取消選擇第一個子鑰，選擇第2個子鑰</p>
+<blockquote>
+<p>key 1</p>
+</blockquote>
+<blockquote>
+<p>key 2</p>
+</blockquote>
+<blockquote>
+<p>keytocard</p>
+</blockquote>
+<p>只能回答3</p>
+<blockquote>
+<p>Save</p>
+</blockquote>
 <h1 id="piv"><a class="header" href="#piv">PIV</a></h1>
 <ul>
 <li>default PIN 123456</li>
@@ -217,25 +228,32 @@ gpg2 --edit-key (KeyWord)
 <li>pkcs15-tool ( OpenSC )</li>
 </ul>
 <h2 id="教學-1"><a class="header" href="#教學-1">教學</a></h2>
-<pre><code>修改PIN、PUK
-還要修改 management key 建議下載軟體或參考官方做法
-yubico-piv-tool -a change-pin -P 123456
-yubico-piv-tool -a change-puk -P 12345678
-
-建立金鑰
-yubico-piv-tool -s 9a -a generate -o public.pem
-
-驗證並自我簽名
-yubico-piv-tool -a verify-pin -a selfsign-certificate -s 9a -S &quot;/CN=SSH KEY/&quot; -i public.pem -o cert.pem
-
-匯入驗證
-yubico-piv-tool -a import-certificate -s 9a -i cert.pem
-</code></pre>
-<pre><code>可看自己有的PIV
-pkcs15-tool --list-public-key
-取得ssh鑰實
-pkcs15-tool --read-ssh-key 01
-</code></pre>
+<p>修改PIN、PUK</p>
+<p>還要修改 management key 建議下載軟體或參考官方做法</p>
+<blockquote>
+<p>yubico-piv-tool -a change-pin -P 123456</p>
+</blockquote>
+<blockquote>
+<p>yubico-piv-tool -a change-puk -P 12345678</p>
+</blockquote>
+<p>建立金鑰</p>
+<blockquote>
+<p>yubico-piv-tool -s 9a -a generate -o public.pem</p>
+</blockquote>
+<p>驗證並自我簽名</p>
+<blockquote>
+<p>yubico-piv-tool -a verify-pin -a selfsign-certificate -s 9a -S &quot;/CN=SSH KEY/&quot; -i public.pem -o cert.pem</p>
+</blockquote>
+<p>匯入驗證</p>
+<p>yubico-piv-tool -a import-certificate -s 9a -i cert.pem</p>
+<p>可看自己有的PIV</p>
+<blockquote>
+<p>pkcs15-tool --list-public-key</p>
+</blockquote>
+<p>取得ssh Key</p>
+<blockquote>
+<p>pkcs15-tool --read-ssh-key 01</p>
+</blockquote>
 <p>Exp: ssh -I /.../opensc-pkcs11.so (Account@web.link)</p>
 
                     </main>
