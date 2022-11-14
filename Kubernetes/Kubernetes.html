@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">mdbook筆記</li><li class="chapter-item expanded "><a href="../mdbook/note.html"><strong aria-hidden="true">1.</strong> mdbook 筆記</a></li><li class="chapter-item expanded "><a href="../Arch_Linux/Arch_Linux.html"><strong aria-hidden="true">2.</strong> Arch_Linux 安裝筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Arch_Linux/pi.html"><strong aria-hidden="true">2.1.</strong> Raspberry pi 3筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../CandCpulse/C.html"><strong aria-hidden="true">3.</strong> C</a></li><li class="chapter-item expanded "><a href="../CandCpulse/Cpulse.html"><strong aria-hidden="true">4.</strong> C ++</a></li><li class="chapter-item expanded "><a href="../Csharp/C_sharp.html"><strong aria-hidden="true">5.</strong> C #</a></li><li class="chapter-item expanded "><a href="../Git/Git.html"><strong aria-hidden="true">6.</strong> Git</a></li><li class="chapter-item expanded "><a href="../GPG/gpg.html"><strong aria-hidden="true">7.</strong> GPG</a></li><li class="chapter-item expanded "><a href="../JavaScript/React.html"><strong aria-hidden="true">8.</strong> JavaScript</a></li><li class="chapter-item expanded "><a href="../Yubikey/Createkey.html"><strong aria-hidden="true">9.</strong> Yubikey</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Yubikey/git.html"><strong aria-hidden="true">9.1.</strong> Yubikey 使用gpg簽章驗證/上傳驗證</a></li></ol></li><li class="chapter-item expanded "><a href="../Kubernetes/Docker.html"><strong aria-hidden="true">10.</strong> Docker筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Kubernetes/Kubernetes.html" class="active"><strong aria-hidden="true">10.1.</strong> Kubernetes筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Python.html"><strong aria-hidden="true">11.</strong> Python筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/tensorflow.html"><strong aria-hidden="true">11.1.</strong> tensorflow筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Liences_learning/list.html"><strong aria-hidden="true">12.</strong> Liences筆記</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">mdbook筆記</li><li class="chapter-item expanded "><a href="../mdbook/note.html"><strong aria-hidden="true">1.</strong> mdbook 筆記</a></li><li class="chapter-item expanded "><a href="../Arch_Linux/Arch_Linux.html"><strong aria-hidden="true">2.</strong> Arch_Linux 安裝筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Arch_Linux/pi.html"><strong aria-hidden="true">2.1.</strong> Raspberry pi 3筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Programming/programming.html"><strong aria-hidden="true">3.</strong> 開發通用筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../CandCpulse/C.html"><strong aria-hidden="true">3.1.</strong> C</a></li><li class="chapter-item expanded "><a href="../CandCpulse/Cpulse.html"><strong aria-hidden="true">3.2.</strong> C ++</a></li><li class="chapter-item expanded "><a href="../Csharp/C_sharp.html"><strong aria-hidden="true">3.3.</strong> C#</a></li><li class="chapter-item expanded "><a href="../JavaScript/React.html"><strong aria-hidden="true">3.4.</strong> JavaScript</a></li></ol></li><li class="chapter-item expanded "><a href="../Git/Git.html"><strong aria-hidden="true">4.</strong> Git</a></li><li class="chapter-item expanded "><a href="../GPG/gpg.html"><strong aria-hidden="true">5.</strong> GPG</a></li><li class="chapter-item expanded "><a href="../Yubikey/Createkey.html"><strong aria-hidden="true">6.</strong> Yubikey</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Yubikey/git.html"><strong aria-hidden="true">6.1.</strong> Yubikey 使用gpg簽章驗證/上傳驗證</a></li></ol></li><li class="chapter-item expanded "><a href="../Kubernetes/Docker.html"><strong aria-hidden="true">7.</strong> Docker筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Kubernetes/Kubernetes.html" class="active"><strong aria-hidden="true">7.1.</strong> Kubernetes筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Python/Python.html"><strong aria-hidden="true">8.</strong> Python筆記</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Python/tensorflow.html"><strong aria-hidden="true">8.1.</strong> tensorflow筆記</a></li></ol></li><li class="chapter-item expanded "><a href="../Liences_learning/list.html"><strong aria-hidden="true">9.</strong> Liences筆記</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -159,16 +159,41 @@ kubectl
 </code></pre>
 <hr />
 <h1 id="ingress---service---deployment"><a class="header" href="#ingress---service---deployment">Ingress -&gt; Service -&gt; deployment</a></h1>
-<p>Service 設定可以讓指定的容器跟外部進行連線</p>
+<h1 id="service-設定可以讓指定的容器跟外部進行連線"><a class="header" href="#service-設定可以讓指定的容器跟外部進行連線">Service 設定可以讓指定的容器跟外部進行連線</a></h1>
+<p>Service 提供述種網路設定</p>
+<ul>
+<li>
+<p>NodePort </p>
+<p>external network -&gt; (nodePort)node-&gt; cluster(port) -&gt; (targetPort)Pod</p>
+<p>注意括弧位置，其位置代表Port的接收/發送方向</p>
+</li>
+<li>
+<p>ClusterIP</p>
+<p>cluster -&gt; Pod</p>
+<p>外部無法連上此服務，主要是讓叢集(Cluster)內的Pod與Pod間能夠互相訪問，例如資料庫與網頁</p>
+</li>
+<li>
+<p>LoadBalancer</p>
+</li>
+<li>
+<p>ExternalName</p>
+</li>
+</ul>
+<hr />
 <p>Ingress 類似像apache 的 virtualhost</p>
 <p>ConfigMap 扮演不需要加密的字典檔</p>
 <p>Secret 與 ConfigMap 正好相反需要對部分設定檔進行加密</p>
-<p>Volumes</p>
-<pre><code>emptyDir
-hostPath
-</code></pre>
+<ul>
+<li>Volumes
+<ul>
+<li>emptyDir</li>
+<li>hostPath</li>
+</ul>
+</li>
+</ul>
 <p>PVC(PersistentVolumeClaim) 會找 PV(PersistentVolume) 進行匹配</p>
 <p>若無則會以 StorageClass 建立新的&quot;動態匹配&quot;</p>
+<hr />
 
                     </main>
 
@@ -199,6 +224,22 @@ hostPath
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
