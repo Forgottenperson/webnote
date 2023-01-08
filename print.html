@@ -834,7 +834,62 @@ enum Days {Mon = 1, Tue, Wed, Thu, Fri, Sat, Sun};
 <li>
 <p>IF(500&lt;1000, &quot;YES&quot;, &quot;NO&quot;)</p>
 </li>
+<li>
+<p>Case when end</p>
+<pre><code>select stock_name,sum(case
+when operation='Sell' then price
+when operation='Buy' then -price
+End) as capital_gain_loss  
+from Stocks 
+group by stock_name 
+</code></pre>
+</li>
+<li>
+<p>UPPER</p>
+</li>
+<li>
+<p>LOWER</p>
+</li>
+<li>
+<p>CONCAT</p>
+</li>
+<li>
+<p>dateDiff</p>
+<ul>
+<li>Year</li>
+<li>Month</li>
 </ul>
+</li>
+<li>
+<p>HAVING</p>
+<ul>
+<li>取代where 可以使用 aggregate function 進行條件查詢</li>
+</ul>
+</li>
+<li>
+<p>FOR XML </p>
+<ul>
+<li>PATH</li>
+</ul>
+</li>
+<li>
+<p>stuff 取代字串</p>
+<ul>
+<li>STUFF ( character_expression , start , length , replaceWith_expression )</li>
+</ul>
+</li>
+<li>
+<p>group_concat</p>
+</li>
+</ul>
+<pre><code>select sell_date,Count(distinct product) num_sold ,group_concat(distinct product) products
+
+from Activities
+
+group by sell_date
+
+order by sell_date
+</code></pre>
 </li>
 <li>
 <p>FROM</p>
@@ -847,8 +902,6 @@ enum Days {Mon = 1, Tue, Wed, Thu, Fri, Sat, Sun};
 <p>as 可以幫資料來源取短名</p>
 <p>再搭配where可以做到關聯查詢</p>
 <p>where a.title=b.title</p>
-<p>where 再其後面可以加上&quot;(+)&quot;來顯示該表格其他未顯示內容</p>
-<p>where a.title=b.title (+)</p>
 </li>
 </ul>
 </li>
@@ -862,6 +915,8 @@ enum Days {Mon = 1, Tue, Wed, Thu, Fri, Sat, Sun};
 </ul>
 <pre><code>% 代表 0~* 字母
 _ 代表 1個字母 空格不算
+
+使用上需注意表示方式
 
 </code></pre>
 </li>
@@ -883,6 +938,8 @@ where Customers.id not in(
 
 )
 </code></pre>
+<p>須注意 not in null 是不正確的寫法
+null 是無法被比較的 其他跟 null 比較會永遠false</p>
 <ul>
 <li>
 <p>Between</p>
@@ -904,6 +961,9 @@ where Customers.id not in(
 </ul>
 </li>
 <li>
+<p>INSERT table (scheme) values(N'1123')</p>
+</li>
+<li>
 <p>UPDATE </p>
 <pre><code>UPDATE table_name
 SET column1 = value1, column2 = value2, ...
@@ -922,6 +982,104 @@ Delete a from Person as a,Person as b
 where a.email=b.email and a.id&gt;b.id
 
 </code></pre>
+</li>
+<li>
+<p>Join</p>
+<ul>
+<li>Left Join
+<ul>
+<li>on 跟where一樣屬於條件判斷過濾 差別在於他是先過濾再合併</li>
+</ul>
+</li>
+<li>Right Join
+<ul>
+<li>on 跟where一樣屬於條件判斷過濾 差別在於他是先過濾再合併</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>UNION </p>
+<pre><code>select employee_id from Employees where employee_id not in ( select employee_id from Salaries)
+
+union
+
+select employee_id from Salaries where employee_id not in ( select employee_id from Employees)
+
+order by employee_id
+</code></pre>
+<pre><code>select id ,&quot;Root&quot; type from Tree where p_id is null
+
+union
+
+select id ,&quot;Inner&quot; type from Tree where id in(select p_id from Tree) and p_id is not null
+
+union
+
+select id ,&quot;Leaf&quot; type from Tree where id not in(select DISTINCT p_id from Tree where p_id is not null) and p_id is not null
+</code></pre>
+</li>
+<li>
+<p>Intersect</p>
+</li>
+<li>
+<p>Except</p>
+</li>
+<li>
+<p>SSMS + SQL Server Express</p>
+<ul>
+<li>
+<p>預存程序(類似常數)</p>
+<ul>
+<li>create PROCEDURE
+<ul>
+<li>exec (CTRL+Shift+R 刷新)</li>
+</ul>
+</li>
+<li>alter PROCEDURE </li>
+</ul>
+<pre><code>create PROCEDURE db.functionName
+    @vari nchar(1)
+as
+begin
+    select * from db.table where name like @vari+'%'
+end
+
+</code></pre>
+</li>
+<li>
+<p>create/alter trigger</p>
+<ul>
+<li>
+<p>SQL 資料庫變動事件</p>
+<ul>
+<li>inserted 修改後</li>
+<li>deleted 修改前</li>
+</ul>
+</li>
+</ul>
+<pre><code>create TRIGGER dbo.membertrigger
+    ON  dbo.member
+    after UPDATE -- 觸發事件
+AS 
+BEGIN
+    IF UPDATE(id) or UPDATE(name) or UPDATE(sex) or UPDATE(age)
+    BEGIN
+        select * from deleted;
+    END
+END
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>DECLARE 宣告</p>
+</li>
+<li>
+<p>sp_executesql </p>
+</li>
+<li>
+<p>字串中要加入單引號需在前面追加一個單引號，如&quot; '' &quot;</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="git-reset-使用方式"><a class="header" href="#git-reset-使用方式">git reset 使用方式</a></h2>
